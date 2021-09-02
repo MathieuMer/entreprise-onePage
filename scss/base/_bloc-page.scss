@@ -1,0 +1,28 @@
+
+#bloc-page {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: flex-start;
+    
+    & ul {
+        list-style: none;
+    }
+}
+
+.titre-section {
+    & h2 {
+        text-align: center;
+        font-size: 3rem;
+        @include font-title;
+        text-transform: uppercase;
+        margin: 0
+
+    }
+    & p {
+        @include w100;
+    }
+}

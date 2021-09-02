@@ -1,0 +1,127 @@
+header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    z-index: 100;
+    transition: 1s;
+    overflow: hidden;
+    
+}
+header.scroll {
+    background: $white;
+    transition: 2s;
+    border-bottom: 1px solid $black;
+    border-radius: 0 0 100% 100%;
+    box-shadow: 0px 3px 10px $black-transparent;
+    
+    & .header__top {
+        height: 0;
+        padding: 0;
+        transition: 1s;
+        & p, ul, li {
+            opacity: 0;
+            display: none;
+            transition: 0.3s;
+        }
+    }
+    
+    & nav a.active{
+        &:after{
+            border-bottom: 10px solid $black;
+            transition: 0.3s;
+            transition-delay: 0.6s;
+        }
+        & li {
+            color: $black;
+        }
+    }
+    
+}
+#home{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.1)),
+                  url("../images/fond_homeHD.jpg");
+    background-origin: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+.header__top{
+    display: block;
+    padding: 0.5rem 0;
+    height: 1rem;
+    transition: 1s;
+    background-color: $black-transparent;
+    & p {
+        display: block;
+        float: left;
+        margin: 0;
+        opacity: 1;
+        transition: 0.3s;
+    }
+    & ul {
+        display: block;
+        float: right;
+        @include liste-inline;
+        opacity: 1;
+        transition: 0.3s;
+        & li {
+            color: $white;
+            padding-left: 1rem
+        }
+    }
+    @include w100;
+}
+
+nav {
+    font-size: 1.2rem;
+    @include font-title;
+    & ul {
+        @include liste-inline;
+        justify-content: center;
+        & a.active{
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 0;
+                top: 2.2rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                border: 0 solid transparent;
+                border-right-width: 10px;
+                border-left-width: 10px;
+                border-bottom: 10px solid $white;
+            }
+            & li {
+                color: $white;
+                //text-shadow: 0px -3px 10px $black;
+            }
+        }
+        & li {
+            color: $light-grey;
+            padding: 0.5rem 2rem 1rem 2rem;
+            text-transform: uppercase;
+        }
+    }
+    @include w100;
+}
+.header__hero {
+    @include w100;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-grow: 1;
+}

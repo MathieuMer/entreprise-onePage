@@ -1,0 +1,60 @@
+//--------------MEDIA QUERY MANAGER----------
+/*
+0 - 600px: phone
+600 - 900: tablet portrait
+900 - 1200px: tablet landscape
+1200 - 1800px: desktop
+1800 - 2560px: desktop HD
+2560 et +: desktop 4K
+*/
+
+// Variables breakpoints media querries:
+$phone-maxi: 600px;
+$tab-port-maxi: 800px;
+$tab-land-maxi: 1023px;
+//desktop (desktopfirst)
+$desktophd-mini: 1800px;
+$desktop4k-mini: 3000px;
+
+// Mixin media querries:
+/*
+Argument $device choice:
+tab-port : definit la structure tablette portrait
+tab-port-big
+tab-land
+desktop
+desktophd
+desktop4k
+*/
+@mixin responsive($device) {
+	@if $device == phone{
+		@media screen and(max-width: $phone-maxi) and (orientation: portrait) {@content;}
+	}
+	@if $device == tab-port{
+		@media screen and(max-width: $tab-land-maxi) {@content;}
+	}
+	@if $device == tab-port{
+		@media (orientation: portrait) {@content;}
+	}
+	@if $device == 4k{
+		@media screen and(min-width: $desktop4k-mini) {@content;}
+	}
+}
+
+// Font-size de base adaptative selon la taille de l'écran, tout s'adapte en fonction de $base-font-size
+$base-font-size-sm: 14px;
+$base-font-size: 16px;
+$base-font-size-tab: 18px;
+$base-font-size-medium: 20px;
+$base-font-size-hd: 22px;
+$base-font-size-4k: 40px;
+
+html{
+    font-size: $base-font-size;
+	@include responsive(tab-port) {
+        font-size: $base-font-size-sm;
+    }
+	@include responsive(4k) {
+        font-size: $base-font-size-4k;
+    }
+}

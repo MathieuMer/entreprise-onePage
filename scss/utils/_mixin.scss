@@ -1,0 +1,28 @@
+// Marges et Paddings
+
+@mixin w100 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+};
+
+// listes inlines sur les ul
+@mixin liste-inline {
+    padding: 0;
+    display: flex;
+}
+
+// backgrounds
+
+
+// Bordures
+@mixin bordure {
+    border: 1px solid $black;
+};
+
+// Fonts
+@mixin font-title {
+    font-family: 'Audiowide', cursive;
+};
+@mixin font-title2 {
+    font-family: 'Homenaje', sans-serif;
+};

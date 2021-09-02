@@ -1,0 +1,24 @@
+#responsive{
+    margin: 0;
+}
+.bloc-responsive{
+    height: 13rem;
+    background: $black;
+    color: $white-casse;
+    position: relative;
+    padding: 1rem 2rem;
+    margin: 0;
+    & img {
+        width: 30%;
+        position: absolute;
+        right: 10%;
+        bottom: -5vh;
+    }
+    & p {
+        width: 50%;
+    }
+}
+.bloc-white {
+    height: 4rem;
+    background: $white;
+}
