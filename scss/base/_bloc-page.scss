@@ -1,4 +1,6 @@
-
+section {
+    box-sizing: border-box;
+}
 #bloc-page {
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -17,12 +19,15 @@
     & h2 {
         text-align: center;
         font-size: 3rem;
-        @include font-title;
+        @include font-title2;
         text-transform: uppercase;
         margin: 0
 
     }
     & p {
+        text-align: center;
+        color: $grey2;
+        font-size: 1.6rem;
         @include w100;
     }
 }

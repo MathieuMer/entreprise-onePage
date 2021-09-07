@@ -1,3 +1,106 @@
 #tarifs{
     min-height: 100vh;
+    padding: 2rem 0;
+    background: $white;
+}
+.conteneur-carte-tarif {
+    display: flex;
+    margin: 0 8% 0 8%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.carte-tarif{
+    width: 23%;
+    background: $light-grey2;
+    text-align: center;
+    & h3 {
+        position: relative;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            width: 10%;
+            height: 0.3rem;
+            transform: translateX(-50%);
+            background: $tercary-color;
+        }
+    }
+    & .carte-tarif__apd {
+        color: darken($light-grey2, 40%);
+        margin: 0;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
+    }
+    & .carte-tarif__prix {
+        position: relative;
+        font-size: 4rem;
+        font-weight: bolder;
+        margin: 0 0 1rem 0;
+        padding-bottom: 1rem;
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 20%;
+            height: 0.3rem;
+            transform: translateX(-50%);
+            background: $tercary-color;
+        }
+
+    }
+    &__liste {
+        padding: 0;
+        & li {
+            padding: 0.5rem 2rem;
+            color: darken($light-grey2, 40%);
+            font-weight: bold;
+        }
+        & :nth-child(2n) {
+            background: darken($light-grey2, 5%);
+        }
+    }
+    &__conteneur-bouton {
+        
+        & a {
+            display: inline-block;
+            text-transform: uppercase;
+            background-color: $tercary-color;
+            padding: 1rem 2rem;
+            margin: 1rem 0;
+            color: $white-casse;
+            border: 1px solid $black;
+            transition: 0.3s;
+            &:hover {
+                background-color: darken($tercary-color, 5%);
+                transition: 0.3s;
+            }
+        }
+    }
+}
+.tarifs__texte--petit {
+    color: $light-grey;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem 0 2rem 0;
+}
+.tarif__contact {
+    display: block;
+    width: 80%;
+    padding: 1rem 3rem;
+    background: $primary-color;
+    text-align: center;
+    color: $white;
+    border: 3px solid $tercary-color;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+        background: darken($primary-color, 10%);
+        transition: 0.3s;
+    }
 }

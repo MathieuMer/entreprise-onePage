@@ -3,7 +3,6 @@ header {
     position: fixed;
     display: flex;
     flex-direction: column;
-    color: $white;
     z-index: 100;
     transition: 1s;
     overflow: hidden;
@@ -11,10 +10,10 @@ header {
 }
 header.scroll {
     background: $white;
-    transition: 2s;
-    border-bottom: 1px solid $black;
-    border-radius: 0 0 100% 100%;
-    box-shadow: 0px 3px 10px $black-transparent;
+    transition: 1s;
+    //border-bottom: 1px solid $black;
+    //border-radius: 0 0 100% 100%;
+    //box-shadow: 0px 3px 10px $black-transparent;
     
     & .header__top {
         height: 0;
@@ -27,54 +26,58 @@ header.scroll {
         }
     }
     
-    & nav a.active{
-        &:after{
-            border-bottom: 10px solid $black;
-            transition: 0.3s;
-            transition-delay: 0.6s;
-        }
+    & nav {
+        font-size: 1.6rem;
+        transition: all 1s;
         & li {
-            color: $black;
+            padding: 0.5rem 2rem 0.5rem 2rem;
+            transition: 0.3s;
+            border-top: 4px solid transparent;
+        }
+        & a.active{
+            & li {
+                color: $tercary-color;
+                border-top: 4px solid $tercary-color;
+            }
+        }
+        & a:hover li {
+            color: $tercary-color;
+            transition: 0.3s;
         }
     }
     
-}
-#home{
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: $white;
-    background-image: linear-gradient(rgba($black, 0.6), rgba($black, 0.1)),
-                  url("../images/fond_homeHD.jpg");
-    background-origin: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 0;
 }
 .header__top{
     display: block;
     padding: 0.5rem 0;
     height: 1rem;
     transition: 1s;
-    background-color: $black-transparent;
-    & p {
-        display: block;
+    //background-color: darken($tercary-color, 5%);
+    background: $tercary-color;
+    
+    & .header__top__coordonnee {
+        display: flex;
         float: left;
         margin: 0;
         opacity: 1;
         transition: 0.3s;
+        color: $light-grey2;
+        & li:nth-child(n+2){
+            padding-left: 1rem;
+            margin-left: 1rem;
+        }
+        & li:nth-child(n+3){
+            border-left: 1px solid $light-grey2;
+        }
     }
-    & ul {
+    & .header__top__icones {
         display: block;
         float: right;
         @include liste-inline;
         opacity: 1;
         transition: 0.3s;
         & li {
-            color: $white;
+            color: $light-grey2;
             padding-left: 1rem
         }
     }
@@ -82,28 +85,24 @@ header.scroll {
 }
 
 nav {
-    font-size: 1.2rem;
-    @include font-title;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    @include font-title2;
+    transition: all 1s;
     & ul {
         @include liste-inline;
         justify-content: center;
+
+        & a:hover li {
+                color: $tercary-color;
+                transition: 0.3s;
+            }
+
         & a.active{
             position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                width: 0px;
-                height: 0;
-                top: 2.2rem;
-                left: 50%;
-                transform: translate(-50%, 0);
-                border: 0 solid transparent;
-                border-right-width: 10px;
-                border-left-width: 10px;
-                border-bottom: 10px solid $white;
-            }
             & li {
-                color: $white;
+                color: $tercary-color;
                 //text-shadow: 0px -3px 10px $black;
             }
         }
@@ -115,13 +114,68 @@ nav {
     }
     @include w100;
 }
-.header__hero {
-    @include w100;
-    height: auto;
+
+#home{
+    height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    text-align: center;
-    flex-grow: 1;
+    align-items: center;
+    background-image: linear-gradient(rgba($white, 0.1), rgba($white-casse, 1)),
+                  url("../images/fond5.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 6rem 0 4rem 0;
+    & .home__bloc {
+        height: 100%;
+        width: 80%;
+        position: relative;
+    }
+    & .home__bloc__row {
+        display: flex;
+        justify-content: space-between;
+        height: 15%;
+        & div {
+            width: 30%;
+            height: 100%;
+        }
+        &__left {
+            border-bottom: 1px solid $tercary-color;
+        }
+        &__right {
+            border-bottom: 1px solid $tercary-color;
+        }
+    }
+    & .home__bloc__row2 {
+        height: 85%;
+        border-bottom: 1px solid $tercary-color;
+        border-right: 1px solid $tercary-color;
+        border-left: 1px solid $tercary-color;
+    }
+    & .home__bloc__chevron {
+        position: absolute;
+        bottom: 2rem;
+        left: calc(50% - 1.5rem);
+        width: 3rem;
+        height: 3rem;
+        color: $tercary-color;
+        border: 1px solid $tercary-color;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        & i {
+            display: block;
+        }
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            background: lighten($primary-color, 5%);
+            color: $white;
+        }
+    }
 }

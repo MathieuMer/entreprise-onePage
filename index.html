@@ -16,9 +16,11 @@
         <!--header-->
         <header>
             <div class="header__top">
-                <p class="header__top__email">
-                    m.mercier78@gmail.com
-                </p>
+                <ul class="header__top__coordonnee">
+                    <li>contact :</li>
+                    <li>m.mercier78@gmail.com</li>
+                    <li>06 85 49 85 33</li>
+                </ul>
                 <ul class="header__top__icones">
                     <a href="#">
                         <li><i class="fab fa-linkedin-in"></i></li>
@@ -33,14 +35,14 @@
                     <a class="active" href="#home">
                         <li><i class="fas fa-home"></i></li>
                     </a>
+                    <a href="#a-propos">
+                        <li>A propos</li>
+                    </a>
                     <a href="#services">
                         <li>Services</li>
                     </a>
                     <a href="#tarifs">
                         <li>Tarifs</li>
-                    </a>
-                    <a href="#a-propos">
-                        <li>A propos</li>
                     </a>
                     <a href="#contact">
                         <li>Contact</li>
@@ -50,9 +52,27 @@
         </header>
 
         <!--Section hero-->
-        <section id="home">
-            <h1>MATHIEU MERCIER</h1>
-            <p>Développeur web</p>
+        <section id="home">   
+            <div class="home__bloc">
+                <div class="home__bloc__row">
+                    <div class="home__bloc__row__item home__bloc__row__left"></div>
+                    <div class="home__bloc__row__item home__bloc__row__center"></div>
+                    <div class="home__bloc__row__item home__bloc__row__right"></div>
+                </div>
+                <div class="home__bloc__row2">
+                    
+                </div>
+                <a href="#a-propos" class="home__bloc__chevron"><i class="fas fa-chevron-down"></i></a>
+            </div>
+            
+        </section>
+
+        <!--Section a propos-->
+        <section id="a-propos">
+            <div class="a-propos__titre titre-section">
+                <h2>A propos</h2>
+                <p>...</p>
+            </div>
         </section>
 
         <!--Section services-->
@@ -178,8 +198,8 @@
                     <ul>
                         <li>Hébergement web</li>
                         <li>Renouvellement nom de dommaine</li>
-                        <li>Mises à jour</li>
-                        <li>Sécurisation</li>
+                        <li>Mises à jour sécutité et plugins</li>
+                        <li>Sauvegarde de votre site</li>
                     </ul>
                     <div class="carte-service__hover">
                         <i class="fas fa-chevron-up carte-service__hover__chevron"></i>
@@ -187,6 +207,17 @@
                         <p class="carte-service__hover__description">Le site vitrine vous permet d'être visible sue internet</p>
                     </div>
                 </div>
+            </div>
+
+            <div id="responsive">
+                <div class="responsive__left">
+                    <h3>Responsive Design</h3>
+                    <p>Les sites que je conçois s'adaptent parfaitement sur toutes les tailles d'écrans.<br/>
+                        <br/>
+                        <span>En 2021, le trafic Internet mobile représente 55,56 % du trafic Internet mondial total !</span>
+                    </p>
+                </div>
+                <img src="./images/responsive2.png" alt="responsive design">   
             </div>
 
            
@@ -278,51 +309,109 @@
                         <p class="carte-service__hover__description">Le site vitrine vous permet d'être visible sue internet</p>
                     </div>
                 </div>
-            </div>
-
-            
-
-
+            </div>         
         </section>
-
-        <div id="responsive">
-            <div class="bloc-responsive">
-                <h3>L'importance du Responsive Design</h3>
-                <p>En 2021, le trafic Internet mobile représente 55,56 % du trafic Internet mondial total, autrement dit, il y a plus d'une chance sur deux pour qu'un visiteur de votre site navigue sur un mobile.<br/>
-                De ce fait, il est essentiel d'avoir un site web qui d'adapte parfaitement aux petits écrans des mobiles.<br/>
-                <br/>
-                Les sites que je créé sont responsive, pour une navigation agréable et intuitive sur tous types d'écrans.
-                </p>
-                <img src="./images/responsive.png" alt="responsive design">
-            </div>
-
-            <div class="bloc-white"></div>
-
-        </div>
 
         <!--Section tarifs-->
         <section id="tarifs">
-            <div class="services__titre titre-section">
+            <div class="tarifs__titre titre-section">
                 <h2>Tarifs</h2>
-                <p>Des prix bas</p>
+                <p>PME, associations ou particuliers, je m'adapte et répond à vos besoins en développement web.</p>
             </div>
-            
-        </section>
 
-        <!--Section a propos-->
-        <section id="a-propos">
-            <div class="services__titre titre-section">
-                <h2>A propos</h2>
-                <p>...</p>
+            <a class="tarif__contact" href="#contact">Contactez moi pour discuter de votre projet et obtenir votre devis gratuit.</a>
+
+            <div class="conteneur-carte-tarif conteneur-carte-tarif__1">
+                <div class="carte-tarif">
+                    <h3>Site vitrine standard</h3>
+                    <p class="carte-tarif__apd">à partir de</p>
+                    <p class="carte-tarif__prix">1199 €</p>
+                    <ul class="carte-tarif__liste">
+                        <li>Développé avec Wordpress</li>
+                        <li>Charte graphique à votre image</li>
+                        <li>Site responsive</li>
+                        <li>Mise en place de vos contenus textes et images</li>
+                        <li>Intégration d'un formulaire de contact</li>
+                        <li>Optimisation SEO</li>
+                        <li>Nom de domaine + hébergement + email (pendant 1 an)</li>
+                        <li>Formation à la gestion de votre site</li>
+                    </ul>
+                    <div class="carte-tarif__conteneur-bouton">
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="carte-tarif">
+                    <h3>Site vitrine sur mesure</h3>
+                    <p class="carte-tarif__apd">à partir de</p>
+                    <p class="carte-tarif__prix">1599 €</p>
+                    <ul class="carte-tarif__liste">
+                        <li>Développé entièrement sur mesure en code</li>
+                        <li>Charte graphique à votre image</li>
+                        <li>Site responsive</li>
+                        <li>Mise en place de vos contenus textes et images</li>
+                        <li>Intégration d'un formulaire de contact</li>
+                        <li>Optimisation SEO</li>
+                        <li>Nom de domaine + hébergement (pendant 1 an)</li>
+                    </ul>
+                    <div class="carte-tarif__conteneur-bouton">
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="carte-tarif">
+                    <h3>plateforme e-commerce</h3>
+                    <p class="carte-tarif__apd">à partir de</p>
+                    <p class="carte-tarif__prix">1599 €</p>
+                    <ul class="carte-tarif__liste">
+                        <li>Développé avec Wordpress ou Prestashop</li>
+                        <li>Charte graphique à votre image</li>
+                        <li>Site responsive</li>
+                        <li>Mise en place de vos contenus textes, images, fiches produits</li>
+                        <li>Intégration des fonctionalités de paiement</li>
+                        <li>Optimisation SEO</li>
+                        <li>Nom de domaine + hébergement (pendant 1 an)</li>
+                        <li>Formation à la gestion de votre site</li>
+                    </ul>
+                    <div class="carte-tarif__conteneur-bouton">
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="carte-tarif">
+                    <h3>forfait maintenance</h3>
+                    <p class="carte-tarif__apd">à partir de</p>
+                    <p class="carte-tarif__prix">299 €</p>
+                    <ul class="carte-tarif__liste">
+                        <li>Hebergement</li>
+                        <li>Renouvellement nom de dommaine</li>
+                        <li>Mise à jour sécurité</li>
+                        <li>Mise à jour plugins</li>
+                        <li>Optimisation des performances</li>
+                        <li>Sauvegarde mensuelle de votre site</li>
+                        <li>Modification légère de contenu ou de design</li>
+                    </ul>
+                    <div class="carte-tarif__conteneur-bouton">
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+                
             </div>
+            <p class="tarifs__texte--petit">
+                Les prix sont donnés à titre indicatif. Chaque projet étant différent, veuillez me contacter afin d'avoir un devis personnalisé.
+            </p>
+            
         </section>
 
         <!--Section contact-->
         <section id="contact">
-            <div class="services__titre titre-section">
+            <div class="contact__titre titre-section">
                 <h2>Contact</h2>
-                <p>Des prix bas</p>
+                <p>...</p>
             </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86618.81619193265!2d-1.10661345417621!3d47.27842112780991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48061765f3edc4cd%3A0x40d37521e0d89f0!2sSaint-Pierre-Montlimart%2C%2049110%20Montrevault-sur-%C3%88vre!5e0!3m2!1sfr!2sfr!4v1630857864006!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
         </section>
 
         <!--footer-->

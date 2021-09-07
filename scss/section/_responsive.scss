@@ -1,24 +1,35 @@
 #responsive{
-    margin: 0;
-}
-.bloc-responsive{
-    height: 13rem;
-    background: $black;
-    color: $white-casse;
-    position: relative;
-    padding: 1rem 2rem;
-    margin: 0;
+    margin: 2rem 0 0 0;
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(55deg, darken($tercary-color, 10%), darken($tercary-color, 10%), $white 70%, $light-grey2 80%);
+    box-shadow: $ombre2;
+    & .responsive__left {
+        width: 60%;
+        & h3 {
+            @include font-title;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin: 0;
+            color: $light-grey2;
+            text-decoration: underline;
+            letter-spacing: 3px;
+            padding: 2rem 0 3rem 0;
+        }
+        & p {
+            color: $light-grey2;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            & span {
+                color: white;
+            }
+        }
+    }
     & img {
-        width: 30%;
-        position: absolute;
-        right: 10%;
-        bottom: -5vh;
+        height: 300px;
+        display: block;
+        margin: 0 auto;
     }
-    & p {
-        width: 50%;
-    }
-}
-.bloc-white {
-    height: 4rem;
-    background: $white;
 }
