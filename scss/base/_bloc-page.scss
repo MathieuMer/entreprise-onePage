@@ -1,5 +1,6 @@
 section {
     box-sizing: border-box;
+    overflow: hidden;
 }
 #bloc-page {
     font-family: 'Roboto', sans-serif;
@@ -21,13 +22,15 @@ section {
         font-size: 3rem;
         @include font-title2;
         text-transform: uppercase;
-        margin: 0
+        margin: 1rem 0 0 0;
+        position: relative;
+        z-index: 1;
 
     }
     & p {
         text-align: center;
         color: $grey2;
         font-size: 1.6rem;
-        @include w100;
+        margin-top: 4rem;
     }
 }

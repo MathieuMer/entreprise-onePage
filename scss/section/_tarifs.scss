@@ -2,6 +2,12 @@
     min-height: 100vh;
     padding: 2rem 0;
     background: $white;
+    //overflow: hidden;
+    & h2:after{
+        @include h2-after;
+        content: 'TARIFS';
+        z-index: -1;
+    }
 }
 .conteneur-carte-tarif {
     display: flex;

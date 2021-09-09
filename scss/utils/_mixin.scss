@@ -1,9 +1,5 @@
 // Marges et Paddings
 
-@mixin w100 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-};
 
 // listes inlines sur les ul
 @mixin liste-inline {
@@ -26,3 +22,15 @@
 @mixin font-title2 {
     font-family: 'Homenaje', sans-serif;
 };
+// h2:after
+@mixin h2-after {
+    position: absolute;
+        font-size: 6rem;
+        height: 6rem;
+        top: -1.5rem;
+        width: 100%;
+        left: 0;
+        color: lighten($primary-color, 35%);
+        text-align: left;
+        padding-left: 50%;
+}

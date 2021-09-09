@@ -31,18 +31,22 @@
                 </ul>
             </div>
             <nav class="header__nav">
+                <a href="#home">
+                    <img src="./images/logomm.png" alt="logo">
+                </a>
+                
                 <ul>
                     <a class="active" href="#home">
                         <li><i class="fas fa-home"></i></li>
-                    </a>
-                    <a href="#a-propos">
-                        <li>A propos</li>
                     </a>
                     <a href="#services">
                         <li>Services</li>
                     </a>
                     <a href="#tarifs">
                         <li>Tarifs</li>
+                    </a>
+                    <a href="#a-propos">
+                        <li>A propos</li>
                     </a>
                     <a href="#contact">
                         <li>Contact</li>
@@ -55,24 +59,25 @@
         <section id="home">   
             <div class="home__bloc">
                 <div class="home__bloc__row">
-                    <div class="home__bloc__row__item home__bloc__row__left"></div>
-                    <div class="home__bloc__row__item home__bloc__row__center"></div>
-                    <div class="home__bloc__row__item home__bloc__row__right"></div>
+                    <div class="home__bloc__row__item home__bloc__row__left">
+
+                    </div>
+                    <div class="home__bloc__row__item home__bloc__row__center">
+                        <img src="./images/logomm.png" alt="logo">
+                    </div>
+                    <div class="home__bloc__row__item home__bloc__row__right">
+
+                    </div>
                 </div>
                 <div class="home__bloc__row2">
+                    <h1>Mathieu MERCIER<br/>
+                        Développeur web freelance à Saint-Pierre-Montlimart
+                    </h1>
                     
                 </div>
-                <a href="#a-propos" class="home__bloc__chevron"><i class="fas fa-chevron-down"></i></a>
+                <a href="#services" class="home__bloc__chevron"><i class="fas fa-chevron-down"></i></a>
             </div>
             
-        </section>
-
-        <!--Section a propos-->
-        <section id="a-propos">
-            <div class="a-propos__titre titre-section">
-                <h2>A propos</h2>
-                <p>...</p>
-            </div>
         </section>
 
         <!--Section services-->
@@ -210,14 +215,14 @@
             </div>
 
             <div id="responsive">
-                <div class="responsive__left">
+                <div class="responsive__left anim">
                     <h3>Responsive Design</h3>
                     <p>Les sites que je conçois s'adaptent parfaitement sur toutes les tailles d'écrans.<br/>
                         <br/>
                         <span>En 2021, le trafic Internet mobile représente 55,56 % du trafic Internet mondial total !</span>
                     </p>
                 </div>
-                <img src="./images/responsive2.png" alt="responsive design">   
+                <img src="./images/responsive2.png" alt="responsive design" class="anim">
             </div>
 
            
@@ -403,13 +408,56 @@
             
         </section>
 
+        <!--Section a propos-->
+        <section id="a-propos">
+            <div class="a-propos__titre titre-section">
+                <h2>A propos</h2>
+                <p>Déveleppeur web, et passionné !</p>
+            </div>
+            <div class="conteneur-a-propos">
+                <img class="a-propos__image" src="./images/portrait.jpg" alt="portrait Mathieu Mercier">
+                <p class="a-propos__texte">
+                    Ma passion pour la création de sites web et plus généralement l’informatique à commencé dans les années 2000. Alors étudiant en électronique, j’occuperai plusieurs postes en tant que technicien en télécommunications et électronique, dans plusieurs entreprises et deux régions différentes.<br/><br/>
+                    C’est seulement en 2020 que je décide de faire de cette passion mon métier, je passe donc une formation et obtient en 2021 le titre RNCP (Répertoire National de la Certification Professionnelle) développeur web de niveau 5.<br/><br/>
+                    Fin d’année 2021, je décide de devenir développeur indépendant, et propose une gamme de services web, graphiques et multimédias.<br/><br/>
+                    Internet et les outils informatiques en général étant de plus en plus indispensable de nos jours, mais pas forcément facile à prendre en main pour tous, je propose aussi mes services d’assistance informatique à domicile, en région Pays de Loire.
+                </p>
+            </div>
+            
+        </section>
+
         <!--Section contact-->
         <section id="contact">
             <div class="contact__titre titre-section">
                 <h2>Contact</h2>
-                <p>...</p>
+                <p>Un interlocuteur unique et à votre écoute tout au long du projet !</p>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86618.81619193265!2d-1.10661345417621!3d47.27842112780991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48061765f3edc4cd%3A0x40d37521e0d89f0!2sSaint-Pierre-Montlimart%2C%2049110%20Montrevault-sur-%C3%88vre!5e0!3m2!1sfr!2sfr!4v1630857864006!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="conteneur-contact">
+                <div class="contact-bloc">
+                    <div class="contact-bloc-item">
+                        <p>Adresse</p>
+                        <p>25 rue de la Chapelle<br/>49110 Saint-Pierre-Montlimart</p>
+                    </div>
+                    <div class="contact-bloc-item">
+                        <p>Email</p>
+                        <a href="mailto:m.mercier78@gmail.com">m.mercier78@gmail.com</a>
+                    </div>
+                    <div class="contact-bloc-item">
+                        <p>Téléphone</p>
+                        <a href="tel:+33685498533">06 85 49 85 33</a>
+                    </div>
+                    <div class="contact-bloc-item">
+                        <p>Horaires</p>
+                        <p>Du lundi au vendredi 8h-18h</p>
+                    </div>
+
+                </div>
+                <div class="contact-bloc">
+                    
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86618.81619193265!2d-1.10661345417621!3d47.27842112780991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48061765f3edc4cd%3A0x40d37521e0d89f0!2sSaint-Pierre-Montlimart%2C%2049110%20Montrevault-sur-%C3%88vre!5e0!3m2!1sfr!2sfr!4v1630857864006!5m2!1sfr!2sfr" width="100%" height="250px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
 
 
         </section>
@@ -423,6 +471,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script src="./index.js"></script>
 
 </body>

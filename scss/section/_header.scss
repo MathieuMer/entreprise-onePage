@@ -9,7 +9,7 @@ header {
     
 }
 header.scroll {
-    background: $white;
+    //background: $white;
     transition: 1s;
     //border-bottom: 1px solid $black;
     //border-radius: 0 0 100% 100%;
@@ -22,26 +22,39 @@ header.scroll {
         & p, ul, li {
             opacity: 0;
             display: none;
-            transition: 0.3s;
+            transition: 1s;
         }
     }
     
     & nav {
-        font-size: 1.6rem;
-        transition: all 1s;
+        background: #242926;
+        clip-path: polygon(37% 100%, 45% 75%, 100% 75%, 100% 0%, 0% 0%, 0% 100%);
+        transition: 1s;
+        & img {
+            opacity: 1;
+            transform: translateY(-50%);
+            transition: 1s;
+        }
+        & ul {
+            right: 0;
+            margin-left: 0;
+            margin-right: 0;
+            transform: translateX(0%);
+            transition: all 1s;
+        }
         & li {
-            padding: 0.5rem 2rem 0.5rem 2rem;
-            transition: 0.3s;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            transition: 1s;
             border-top: 4px solid transparent;
         }
         & a.active{
             & li {
-                color: $tercary-color;
-                border-top: 4px solid $tercary-color;
+                color: $white;
+                border-top: 4px solid $white;
             }
         }
         & a:hover li {
-            color: $tercary-color;
+            color: $white-casse;
             transition: 0.3s;
         }
     }
@@ -53,14 +66,14 @@ header.scroll {
     height: 1rem;
     transition: 1s;
     //background-color: darken($tercary-color, 5%);
-    background: $tercary-color;
+    background: $black;
     
     & .header__top__coordonnee {
         display: flex;
         float: left;
         margin: 0;
         opacity: 1;
-        transition: 0.3s;
+        transition: 1s;
         color: $light-grey2;
         & li:nth-child(n+2){
             padding-left: 1rem;
@@ -75,30 +88,47 @@ header.scroll {
         float: right;
         @include liste-inline;
         opacity: 1;
-        transition: 0.3s;
+        transition: 1s;
+        padding-right: 2rem;
         & li {
             color: $light-grey2;
             padding-left: 1rem
         }
     }
-    @include w100;
 }
 
 nav {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 2px;
     @include font-title2;
     transition: all 1s;
+    position: relative;
+    height: 3.5rem;
+    background: rgba($white, 0.3);
+    clip-path: polygon(37% 100%, 66% 100%, 100% 100%, 100% 0%, 0% 0%, 0% 100%);
+    & img {
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-200%);
+        height: 80%;
+        opacity: 0;
+        transition: 1s;
+    }
     & ul {
         @include liste-inline;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translateX(50%);
         justify-content: center;
-
+        align-items: center;
+        transition: 1s;
         & a:hover li {
                 color: $tercary-color;
                 transition: 0.3s;
             }
-
         & a.active{
             position: relative;
             & li {
@@ -107,12 +137,14 @@ nav {
             }
         }
         & li {
+            margin: 0;
+            white-space: nowrap;
             color: $light-grey;
-            padding: 0.5rem 2rem 1rem 2rem;
+            padding: 1rem 2rem 1rem 2rem;
             text-transform: uppercase;
+            transition: 1s;
         }
     }
-    @include w100;
 }
 
 #home{
@@ -147,12 +179,30 @@ nav {
         &__right {
             border-bottom: 1px solid $tercary-color;
         }
+        &__center {
+            position: relative;
+            & img {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 60%;
+            }
+        }
     }
     & .home__bloc__row2 {
         height: 85%;
         border-bottom: 1px solid $tercary-color;
         border-right: 1px solid $tercary-color;
         border-left: 1px solid $tercary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & h1 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
     }
     & .home__bloc__chevron {
         position: absolute;
@@ -167,13 +217,13 @@ nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.3s;
+        transition: 1s;
         & i {
             display: block;
         }
         &:hover {
             transform: scale(1.1);
-            transition: 0.3s;
+            transition: 1s;
             background: lighten($primary-color, 5%);
             color: $white;
         }

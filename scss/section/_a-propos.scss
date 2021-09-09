@@ -2,4 +2,42 @@
     min-height: 100vh;
     background: $white-casse;
     padding: 2rem 10%;
+    clip-path: polygon(50% 0, 70% 0%, 100% 0, 100% 90%, 0 100%, 0 86%, 0% 70%, 0 10%);
+    & h2:after{
+        content: 'A PROPOS';
+        z-index: -1;
+        @include h2-after;
+    }
+    .conteneur-a-propos {
+        padding: 2rem;
+        position: relative;
+        //border: 1px solid $black;
+        //border-radius: 7.5rem 0 0 0;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: 50%;
+            width: 25%;
+            height: 0.3rem;
+            transform: translateX(-50%);
+            background: $tercary-color;
+        }
+    }
+}
+
+.a-propos__image {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin-right: 4rem;
+    filter: grayscale(80%);
+}
+
+.a-propos__texte {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
 }

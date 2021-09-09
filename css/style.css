@@ -393,6 +393,7 @@ template {
 section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
 }
 
 #bloc-page {
@@ -411,15 +412,16 @@ section {
   font-size: 3rem;
   font-family: 'Homenaje', sans-serif;
   text-transform: uppercase;
-  margin: 0;
+  margin: 1rem 0 0 0;
+  position: relative;
+  z-index: 1;
 }
 
 .titre-section p {
   text-align: center;
   color: #5f5f5f;
   font-size: 1.6rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-top: 4rem;
 }
 
 header {
@@ -439,7 +441,6 @@ header {
 }
 
 header.scroll {
-  background: #FFFFFF;
   -webkit-transition: 1s;
   transition: 1s;
 }
@@ -454,30 +455,50 @@ header.scroll .header__top {
 header.scroll .header__top p, header.scroll .header__top ul, header.scroll .header__top li {
   opacity: 0;
   display: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 header.scroll nav {
-  font-size: 1.6rem;
+  background: #242926;
+  -webkit-clip-path: polygon(37% 100%, 45% 75%, 100% 75%, 100% 0%, 0% 0%, 0% 100%);
+          clip-path: polygon(37% 100%, 45% 75%, 100% 75%, 100% 0%, 0% 0%, 0% 100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header.scroll nav img {
+  opacity: 1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header.scroll nav ul {
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
 header.scroll nav li {
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  -webkit-transition: 1s;
+  transition: 1s;
   border-top: 4px solid transparent;
 }
 
 header.scroll nav a.active li {
-  color: #006446;
-  border-top: 4px solid #006446;
+  color: #FFFFFF;
+  border-top: 4px solid #FFFFFF;
 }
 
 header.scroll nav a:hover li {
-  color: #006446;
+  color: #F3F3F3;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -488,9 +509,7 @@ header.scroll nav a:hover li {
   height: 1rem;
   -webkit-transition: 1s;
   transition: 1s;
-  background: #006446;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  background: #000000;
 }
 
 .header__top .header__top__coordonnee {
@@ -500,8 +519,8 @@ header.scroll nav a:hover li {
   float: left;
   margin: 0;
   opacity: 1;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
   color: #d8d8d8;
 }
 
@@ -522,8 +541,9 @@ header.scroll nav a:hover li {
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
+  padding-right: 2rem;
 }
 
 .header__top .header__top__icones li {
@@ -532,14 +552,29 @@ header.scroll nav a:hover li {
 }
 
 nav {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 2px;
   font-family: 'Homenaje', sans-serif;
   -webkit-transition: all 1s;
   transition: all 1s;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  position: relative;
+  height: 3.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-clip-path: polygon(37% 100%, 66% 100%, 100% 100%, 100% 0%, 0% 0%, 0% 100%);
+          clip-path: polygon(37% 100%, 66% 100%, 100% 100%, 100% 0%, 0% 0%, 0% 100%);
+}
+
+nav img {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  -webkit-transform: translateY(-200%);
+          transform: translateY(-200%);
+  height: 80%;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 nav ul {
@@ -547,9 +582,19 @@ nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 nav ul a:hover li {
@@ -567,9 +612,13 @@ nav ul a.active li {
 }
 
 nav ul li {
+  margin: 0;
+  white-space: nowrap;
   color: #a7a7a7;
-  padding: 0.5rem 2rem 1rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
   text-transform: uppercase;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 #home {
@@ -622,11 +671,39 @@ nav ul li {
   border-bottom: 1px solid #006446;
 }
 
+#home .home__bloc__row__center {
+  position: relative;
+}
+
+#home .home__bloc__row__center img {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 60%;
+}
+
 #home .home__bloc__row2 {
   height: 85%;
   border-bottom: 1px solid #006446;
   border-right: 1px solid #006446;
   border-left: 1px solid #006446;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home .home__bloc__row2 h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 #home .home__bloc__chevron {
@@ -651,8 +728,8 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 #home .home__bloc__chevron i {
@@ -662,8 +739,8 @@ nav ul li {
 #home .home__bloc__chevron:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 1s;
+  transition: 1s;
   background: #82ab98;
   color: #FFFFFF;
 }
@@ -678,6 +755,20 @@ nav ul li {
   overflow: hidden;
 }
 
+#services h2:after {
+  position: absolute;
+  font-size: 6rem;
+  height: 6rem;
+  top: -1.5rem;
+  width: 100%;
+  left: 0;
+  color: #dee9e3;
+  text-align: left;
+  padding-left: 50%;
+  content: 'MES SERVICES';
+  z-index: -5;
+}
+
 .conteneur-carte-service {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -688,7 +779,7 @@ nav ul li {
       flex-wrap: wrap;
   padding: 1rem 2rem 2rem 2rem;
   margin: 2rem 10% 0 10%;
-  border: 3px solid #006446;
+  border: 1px solid #000000;
   overflow: hidden;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
@@ -729,6 +820,9 @@ nav ul li {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+  opacity: 0;
 }
 
 .carte-service__icone {
@@ -828,6 +922,14 @@ nav ul li {
           transform: scale(1.02);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.appear {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
 }
 
 .bg-bubbles {
@@ -960,6 +1062,20 @@ nav ul li {
   background: #FFFFFF;
 }
 
+#tarifs h2:after {
+  position: absolute;
+  font-size: 6rem;
+  height: 6rem;
+  top: -1.5rem;
+  width: 100%;
+  left: 0;
+  color: #dee9e3;
+  text-align: left;
+  padding-left: 50%;
+  content: 'TARIFS';
+  z-index: -1;
+}
+
 .conteneur-carte-tarif {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1087,10 +1203,91 @@ nav ul li {
   min-height: 100vh;
   background: #F3F3F3;
   padding: 2rem 10%;
+  -webkit-clip-path: polygon(50% 0, 70% 0%, 100% 0, 100% 90%, 0 100%, 0 86%, 0% 70%, 0 10%);
+          clip-path: polygon(50% 0, 70% 0%, 100% 0, 100% 90%, 0 100%, 0 86%, 0% 70%, 0 10%);
+}
+
+#a-propos h2:after {
+  content: 'A PROPOS';
+  z-index: -1;
+  position: absolute;
+  font-size: 6rem;
+  height: 6rem;
+  top: -1.5rem;
+  width: 100%;
+  left: 0;
+  color: #dee9e3;
+  text-align: left;
+  padding-left: 50%;
+}
+
+#a-propos .conteneur-a-propos {
+  padding: 2rem;
+  position: relative;
+}
+
+#a-propos .conteneur-a-propos:after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  width: 25%;
+  height: 0.3rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #006446;
+}
+
+.a-propos__image {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  margin-right: 4rem;
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+}
+
+.a-propos__texte {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
 }
 
 #contact {
   min-height: 100vh;
+}
+
+#contact h2:after {
+  content: 'CONTACT';
+  z-index: -1;
+  position: absolute;
+  font-size: 6rem;
+  height: 6rem;
+  top: -1.5rem;
+  width: 100%;
+  left: 0;
+  color: #dee9e3;
+  text-align: left;
+  padding-left: 50%;
+}
+
+#contact .conteneur-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 2rem 10%;
+}
+
+#contact .contact-bloc {
+  width: 45%;
 }
 
 #responsive {
@@ -1102,13 +1299,16 @@ nav ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: linear-gradient(55deg, #003122, #003122, #FFFFFF 70%, #d8d8d8 80%);
+  background: linear-gradient(55deg, #000000 50%, #FFFFFF 70%, #d8d8d8 80%);
   -webkit-box-shadow: 0.25rem 0.25em 0.3em rgba(167, 167, 167, 0.4);
           box-shadow: 0.25rem 0.25em 0.3em rgba(167, 167, 167, 0.4);
 }
 
 #responsive .responsive__left {
   width: 60%;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  opacity: 0;
 }
 
 #responsive .responsive__left h3 {
@@ -1120,6 +1320,7 @@ nav ul li {
   text-decoration: underline;
   letter-spacing: 3px;
   padding: 2rem 0 3rem 0;
+  color: #FFFFFF;
 }
 
 #responsive .responsive__left p {
@@ -1137,5 +1338,16 @@ nav ul li {
   height: 300px;
   display: block;
   margin: 0 auto;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  opacity: 0;
+}
+
+.appear2 {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+  opacity: 1 !important;
+  -webkit-transition: 1s !important;
+  transition: 1s !important;
 }
 /*# sourceMappingURL=style.css.map */

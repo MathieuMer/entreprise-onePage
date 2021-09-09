@@ -6,6 +6,11 @@
     background-size:cover;
     position: relative;
     overflow: hidden;
+    & h2:after{
+        @include h2-after;
+        content: 'MES SERVICES';
+        z-index: -5;
+    }
 }
 
 .conteneur-carte-service{
@@ -14,7 +19,7 @@
     flex-wrap: wrap;
     padding: 1rem 2rem 2rem 2rem;
     margin: 2rem 10% 0 10%;
-    border: 3px solid $tercary-color;
+    border: 1px solid $black;
     overflow: hidden;
     backdrop-filter: blur(3px);
     &__2 {
@@ -47,7 +52,9 @@
     background: $white;
     transition: 0.3s;
     overflow: hidden;
-    //border: 3px solid $tercary-color;
+    transform: translateY(30px);
+    opacity: 0;
+    
     &__icone {
         height: 8rem;
         margin: 0 auto;
@@ -123,6 +130,11 @@
         //border: 3px solid darken($tercary-color, 5%);
         transition: 0.3s;
     }
+}
+.appear {
+    transform: translateY(0);
+    transition: 1s;
+    opacity: 1;
 }
 
 // Animation square dans conteneur-service
