@@ -2,8 +2,8 @@
     min-height: 100vh;
     padding: 1rem 0;
     margin: 0;
-    background: rgba($color: $white, $alpha: 0.5);    
-    background-size:cover;
+    background: rgba(#ffffff, $alpha: 0.5);    
+    background-size: cover;
     position: relative;
     overflow: hidden;
     & h2:after{
@@ -21,6 +21,7 @@
     margin: 2rem 10% 0 10%;
     border: 1px solid $black;
     overflow: hidden;
+    background: rgba($white-casse, $alpha: 0.3);
     backdrop-filter: blur(3px);
     &__2 {
         padding-bottom: 2rem;
@@ -131,12 +132,56 @@
         transition: 0.3s;
     }
 }
+// Style bannière responsive design
 .appear {
     transform: translateY(0);
     transition: 1s;
     opacity: 1;
 }
-
+#responsive{
+    margin: 2rem 0 0 0;
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(55deg, $grey 3%, $black 50%, $white 70%, $light-grey2 80%);
+    & .responsive__left {
+        width: 60%;
+        transform: translateX(-100px);
+        opacity: 0;
+        & h3 {
+            @include font-title;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin: 0;
+            color: $light-grey2;
+            text-decoration: underline;
+            letter-spacing: 3px;
+            padding: 2rem 0 3rem 0;
+            color: $white;
+        }
+        & p {
+            color: $light-grey2;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            & span {
+                color: white;
+            }
+        }
+    }
+    & img {
+        height: 300px;
+        display: block;
+        margin: 0 auto;
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+.appear2 {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    transition: 1s !important;
+}
 // Animation square dans conteneur-service
 .bg-bubbles{
 	position: absolute;

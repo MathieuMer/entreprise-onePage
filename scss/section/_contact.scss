@@ -1,5 +1,6 @@
 #contact{
     min-height: 100vh;
+    padding: 2rem 0 0 0;
     & h2:after{
         content: 'CONTACT';
         z-index: -1;
@@ -8,10 +9,87 @@
     .conteneur-contact {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: stretch;
         padding: 2rem 10%;
     }
     .contact-bloc {
-        width: 45%;
+        color: $grey2;
+        &__item {
+            background: $white-casse;
+            padding: 1rem 1rem 1rem 2.5rem;
+            border-radius: 1rem;
+            position: relative;
+        }
+        &__item:nth-child(n+2){
+            margin-top: 1rem;
+        }
+        & a{
+            text-decoration: none;
+            color: $grey2;
+        }
+        & .contact-bloc__item p:first-child {
+            position: relative;
+            color: $grey;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        & p {
+            margin: 0;
+        }
+        &--info {
+            width: 24%;
+            border-right: 1px solid $tercary-color;
+            padding-right: 2rem;
+            
+        }
+        &--form {
+            width: 70%;
+        }
+    }
+}
+
+.contact-bloc__item__adresse:before {
+    @include icone-before;
+    content: "\f041";
+}
+
+.contact-bloc__item__email:before {
+    @include icone-before;
+    content: "\f2b6";
+}
+.contact-bloc__item__tel:before {
+    @include icone-before;
+    content: "\f879";
+}
+.contact-bloc__item__horaires:before {
+    @include icone-before;
+    content: "\f017";
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    & label {
+        
+    }
+    & input {
+        margin: 0.5rem 0 1rem 0;
+        font-size: 1.2rem;
+    }
+    & textarea {
+        margin-top: 0.5rem;
+        resize: vertical;
+    }
+    & button {
+        width: 50%;
+        margin: 1rem auto 0 auto;
+        padding: 0.5rem 0;
+        background: $tercary-color;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: $white;
     }
 }

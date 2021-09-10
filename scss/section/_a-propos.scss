@@ -1,28 +1,27 @@
 #a-propos{
     min-height: 100vh;
-    background: $white-casse;
+    background-image: linear-gradient(rgba($white, 0.7), rgba($white-casse, 1)),
+    url("../images/fond_homeHD.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 2rem 10%;
-    clip-path: polygon(50% 0, 70% 0%, 100% 0, 100% 90%, 0 100%, 0 86%, 0% 70%, 0 10%);
+    //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     & h2:after{
         content: 'A PROPOS';
         z-index: -1;
         @include h2-after;
     }
     .conteneur-a-propos {
+        width: 60%;
+        margin: 0 auto;
         padding: 2rem;
         position: relative;
-        //border: 1px solid $black;
-        //border-radius: 7.5rem 0 0 0;
-        &:after {
-            content: '';
-            position: absolute;
-            bottom: -0.8rem;
-            left: 50%;
-            width: 25%;
-            height: 0.3rem;
-            transform: translateX(-50%);
-            background: $tercary-color;
-        }
+        //background: #ffffff;
+        color: $grey3;
+        border-top: 3px solid $tercary-color;
+        border-bottom: 3px solid $tercary-color;
+
     }
 }
 
@@ -33,11 +32,12 @@
     float: left;
     shape-outside: circle();
     margin-right: 4rem;
-    filter: grayscale(80%);
+    //filter: grayscale(30%);
 }
 
 .a-propos__texte {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 0;
     text-align: justify;
+    
 }

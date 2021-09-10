@@ -29,9 +29,14 @@ $(document).ready(function() {
     });
 });
 
-// gestion de la classe active
+// Fonctionalitées dépendantes du scroll
 $(window).scroll(function() {
-    var scrollDistance = $(window).scrollTop(); 
+    var scrollDistance = $(window).scrollTop();
+
+    // Gestion zoom background #home
+    $("#home").css({
+        backgroundSize: (180 - scrollDistance/12) + "%"
+    });
 
     // Assign active class to nav links while scrolling
     $('section').each(function(i) {
@@ -88,3 +93,46 @@ animations.forEach(elt => {
     observer2.observe(elt);
 })
 
+// emailjs fonction d'envoi email lors du clic
+
+function sendEmail(event) {
+    event.preventDefault();
+
+    let tempParams = {
+        user_name: document.getElementById("user_name").value,
+        user_email: document.getElementById("user_email").value,
+        message: document.getElementById("user_message").value
+    }
+    console.log(tempParams);
+    if (tempParams.user_name == "" || tempParams.user_email == "" || tempParams.message == "") {
+        swal({
+            text: "Veuillez remplir tout les champs !",
+            buttons: false,
+            timer: 2000,
+            icon: "error"
+          });
+          return;
+    }
+    emailjs.send('service_hci0lwc', 'template_zzcminq', tempParams)
+    .then((result) => {
+          console.log('SUCCESS!', result.status, result.text);
+          swal({
+            text: "Message envoyé !",
+            buttons: false,
+            timer: 2000,
+            icon: "success"
+          });
+    })
+    .catch((error) => {
+        console.log({error})
+        swal({
+            text: "Une erreur est survenue !",
+            buttons: false,
+            timer: 2000,
+            icon: "error"
+          });
+    })
+}
+/*
+
+*/
