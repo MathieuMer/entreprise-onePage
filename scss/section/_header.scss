@@ -13,19 +13,10 @@ header.scroll {
     transition: 1s;
     //border-bottom: 1px solid $black;
     //border-radius: 0 0 100% 100%;
-    //box-shadow: 0px 3px 10px $black-transparent;
-    
+    //box-shadow: 0px 3px 10px $black-transparent;   
     & .header__top {
-        height: 0;
-        padding: 0;
-        transition: 1s;
-        & p, ul, li {
-            opacity: 0;
-            display: none;
-            transition: 1s;
-        }
+        display: none;
     }
-    
     & nav {
         background: $white;
         clip-path: polygon(37% 100%, 45% 75%, 100% 75%, 100% 0%, 0% 0%, 0% 100%);
@@ -45,32 +36,35 @@ header.scroll {
         & li {
             padding: 0.5rem 1rem 0.5rem 1rem;
             transition: 1s;
-            border-top: 4px solid transparent;
         }
         & a.active{
             & li {
-                color: $tercary-color;
-                border-top: 4px solid $tercary-color;
+                color: $white;
+                background-color: $primary-color;
             }
         }
+        & a.active:hover li {
+            color: $white;
+        }
         & a:hover li {
-            color: $tercary-color;
+            color: $primary-color;
             transition: 0.3s;
         }
     }
     
 }
 .header__top{
-    display: block;
-    padding: 0.5rem 0;
-    height: 1rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5rem;
     transition: 1s;
     //background-color: darken($tercary-color, 5%);
-    background: $black;
+    background: $primary-color;
     
     & .header__top__coordonnee {
         display: flex;
-        float: left;
         margin: 0;
         opacity: 1;
         transition: 1s;
@@ -79,20 +73,28 @@ header.scroll {
             padding-left: 1rem;
             margin-left: 1rem;
         }
-        & li:nth-child(n+3){
-            border-left: 1px solid $light-grey2;
+        & li:nth-child(1n+2){
+            border-left: 1px solid $light-grey;
+        }
+        & li a {
+            color: $white;
         }
     }
     & .header__top__icones {
         display: block;
-        float: right;
         @include liste-inline;
         opacity: 1;
         transition: 1s;
-        padding-right: 2rem;
-        & li {
-            color: $light-grey2;
-            padding-left: 1rem
+        & li a{
+            color: $white;
+            padding: 0 0.5rem
+        }
+        & li:first-child{
+            border: 1px solid $white;
+            margin-right: 2rem;
+            & a {
+                padding: 0 0.1rem;
+            }
         }
     }
 }
@@ -126,13 +128,13 @@ nav {
         align-items: center;
         transition: 1s;
         & a:hover li {
-                color: $tercary-color;
+                color: $primary-color;
                 transition: 0.3s;
             }
         & a.active{
             position: relative;
             & li {
-                color: $tercary-color;
+                color: $primary-color;
                 //text-shadow: 0px -3px 10px $black;
             }
         }
@@ -175,10 +177,10 @@ nav {
             height: 100%;
         }
         &__left {
-            border-bottom: 1px solid $tercary-color;
+            border-bottom: 1px solid $primary-color;
         }
         &__right {
-            border-bottom: 1px solid $tercary-color;
+            border-bottom: 1px solid $primary-color;
         }
         &__center {
             position: relative;
@@ -193,16 +195,26 @@ nav {
     }
     & .home__bloc__row2 {
         height: 85%;
-        border-bottom: 1px solid $tercary-color;
-        border-right: 1px solid $tercary-color;
-        border-left: 1px solid $tercary-color;
+        border-bottom: 1px solid $primary-color;
+        border-right: 1px solid $primary-color;
+        border-left: 1px solid $primary-color;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         & h1 {
             margin: 0;
             padding: 0;
             text-align: center;
+            color: gray;
+            & span {
+                font-size: 4rem;
+                color: $primary-color;
+                @include font-title2;
+            }
+            & a {
+                color: $grey2;
+            }
         }
     }
     & .home__bloc__chevron {
@@ -211,21 +223,21 @@ nav {
         left: calc(50% - 1.5rem);
         width: 3rem;
         height: 3rem;
-        color: $tercary-color;
-        border: 1px solid $tercary-color;
+        color: $primary-color;
+        border: 1px solid $primary-color;
         border-radius: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 1s;
+        transition: 0.3s;
         & i {
             display: block;
         }
         &:hover {
             transform: scale(1.1);
-            transition: 1s;
-            background: lighten($primary-color, 5%);
+            transition: 0.3s;
+            background: $primary-color;
             color: $white;
         }
     }

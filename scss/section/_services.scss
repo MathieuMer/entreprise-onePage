@@ -15,14 +15,16 @@
 
 .conteneur-carte-service{
     display: flex;
+    position: relative;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 1rem 2rem 2rem 2rem;
     margin: 2rem 10% 0 10%;
-    border: 1px solid $black;
-    overflow: hidden;
-    background: rgba($white-casse, $alpha: 0.3);
+    //border: 1px solid $light-grey2;
+    background: transparent;
     backdrop-filter: blur(3px);
+    
+    
     &__2 {
         padding-bottom: 2rem;
     }
@@ -31,6 +33,10 @@
         width: 100%;
         text-align: center;
         padding: 0 0 1rem 0;
+        margin-bottom: 2rem;
+        @include font-title2;
+        font-size: 2rem;
+        text-transform: uppercase;
         &:after{
             content: '';
             position: absolute;
@@ -43,18 +49,20 @@
         }
     }
 }
+
+
+
 .carte-service{
-    width: 25%;
+    width: 30%;
     min-height: 20rem;
     position: relative;
-    padding: 1rem 1rem 3rem 1rem;
-    margin-top: 2rem;
-    box-shadow: 3px 3px 10px $light-grey;
+    padding: 1rem 0 3rem 0;
     background: $white;
     transition: 0.3s;
-    overflow: hidden;
     transform: translateY(30px);
-    opacity: 0;
+    z-index: 1;
+    margin-top: 2rem;
+    border: 1px solid $light-grey2;
     
     &__icone {
         height: 8rem;
@@ -69,35 +77,20 @@
     }
     & h4 {
         text-align: center;
-        color: $black;
+        color: $grey3;
         font-size: 1.5rem;
         padding: 0.5rem 0;
+        margin: 1rem 1rem 0 1rem;
         @include font-title2;
-        border-top: 2px solid $tercary-color;
-        border-bottom: 2px solid $tercary-color;
+        border-top: 1px solid $light-grey2;
+        border-bottom: 1px solid $light-grey2;
     }
     & ul {
         color: $grey2;
-        
-        padding: 0 1rem;
+        margin-left: 1rem;
+        padding: 2rem 1rem 0 1rem;
         & li {
             list-style: square;
-        }
-    }
-    &__hover{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2.5rem;
-        width: 100%;
-        background: linear-gradient($primary-color, darken($primary-color, 15%));
-        transition: 0.4s;
-        z-index: 2;
-        border-radius: 50% 50% 0 0;
-        text-align: center;
-        &__chevron {
-            padding: 0.8rem 0;
-            color: $white;
         }
         &__titre {
             color: $white;
@@ -108,30 +101,14 @@
             padding: 0 1rem;
         }
     }
-    & .carte-service__hover:hover {
-        height: 100%;
-        transition: 0.4s;
-        border-radius: 0;
-        
-        & .carte-service__hover__chevron {
-            display: none;
-            transition: 0.3s;
-        }
-        & .carte-service__hover__titre {
-            padding: 0 1rem 1rem 1rem;
-            border-bottom: 1px solid $white;
-        }
-        & .carte-service__hover__description {
-            padding: 0 1rem;
-        }
-    }
     &:hover{
-        box-shadow: 5px 5px 10px $grey;
         transform: scale(1.02);
         //border: 3px solid darken($tercary-color, 5%);
         transition: 0.3s;
     }
 }
+
+
 // Style bannière responsive design
 .appear {
     transform: translateY(0);
@@ -139,43 +116,60 @@
     opacity: 1;
 }
 #responsive{
-    margin: 2rem 0 0 0;
-    padding: 0 10%;
+    position: relative;
+    width: 100%;
+    //height: 15rem;
     display: flex;
     justify-content: center;
-    background: linear-gradient(55deg, $grey 3%, $black 50%, $white 70%, $light-grey2 80%);
-    & .responsive__left {
-        width: 60%;
-        transform: translateX(-100px);
-        opacity: 0;
+    align-items: stretch;
+    //background: $white-casse;
+    background: $white;
+    border-top: 1px solid $orange;
+    border-bottom: 1px solid $orange;
+   & .responsive__left{
+       width: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       z-index: 1;
+       & img {
+        width: 90%;
+    }
+   }
+   & .responsive__right{
+        width: 50%;
+        color: $grey3;
+        padding: 2rem;
+        z-index: 1;
+        
         & h3 {
-            @include font-title;
+            padding: 1rem 0;
+            font-family: 'Audiowide', cursive;
             font-size: 3rem;
-            text-transform: uppercase;
-            margin: 0;
-            color: $light-grey2;
-            text-decoration: underline;
-            letter-spacing: 3px;
-            padding: 2rem 0 3rem 0;
-            color: $white;
-        }
-        & p {
-            color: $light-grey2;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            & span {
-                color: white;
+            position: relative;
+            margin-bottom: 3rem;
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: -0.8rem;
+                left: 0;
+                width: 20%;
+                height: 0.4rem;
+                background: $orange;
             }
         }
     }
-    & img {
-        height: 300px;
-        display: block;
-        margin: 0 auto;
-        transform: translateX(100px);
-        opacity: 0;
+    & .responsive__back{
+       position: absolute;
+       width: 100%;
+       left: 0;
+       bottom: 1%;
+       height: 20%;
+       background: $light-grey2;
+       clip-path: polygon(0 0, 50% 0, 65% 100%, 0% 100%);
+       z-index: 0;
     }
+    
 }
 .appear2 {
     transform: translateX(0) !important;
@@ -244,7 +238,7 @@
 			height: 120px;
 			
 			animation-delay: 3s;
-			background-color: lighten($primary-color, 5%);
+			background-color: lighten($primary-color, 40%);
 		}
 		
 		&:nth-child(7){
