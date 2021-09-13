@@ -5,42 +5,51 @@
         content: 'CONTACT';
         z-index: -1;
         @include h2-after;
+        color: $white-casse;
     }
     .conteneur-contact {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         align-items: stretch;
-        padding: 2rem 10%;
+        padding: 4rem 10%;
     }
     .contact-bloc {
-        color: $grey2;
+        color: $white;
+        &__intro {
+            color: $grey;
+            font-size: 1.2rem;
+            padding: 3rem 10% 0 10%;
+            text-align: center;
+        }
         &__item {
-            background: $white-casse;
+            //background: $primary-color;
             padding: 1rem 1rem 1rem 2.5rem;
-            border-radius: 1rem;
+            //border-radius: 1rem;
+            //border: 1px solid $white;
             position: relative;
+            box-shadow: $ombre1;
         }
         &__item:nth-child(n+2){
-            margin-top: 1rem;
+            margin-top: 2.5rem;
         }
         & a{
             text-decoration: none;
-            color: $grey2;
+            color: $white;
         }
         & .contact-bloc__item p:first-child {
             position: relative;
-            color: $grey;
+            color: $light-grey2;
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         & p {
             margin: 0;
         }
         &--info {
             width: 24%;
-            border-right: 1px solid $tercary-color;
-            padding-right: 2rem;
+            //border-right: 1px solid $light-grey2;
+            //padding-right: 2rem;
             
         }
         &--form {
@@ -49,31 +58,57 @@
     }
 }
 
-.contact-bloc__item__adresse:before {
+.contact-bloc__item--1:before {
     @include icone-before;
     content: "\f041";
 }
 
-.contact-bloc__item__email:before {
+.contact-bloc__item--2:before {
     @include icone-before;
     content: "\f2b6";
 }
-.contact-bloc__item__tel:before {
+.contact-bloc__item--3:before {
     @include icone-before;
     content: "\f879";
 }
-.contact-bloc__item__horaires:before {
+.contact-bloc__item--4:before {
     @include icone-before;
     content: "\f017";
 }
+.contact-bloc__item--5:before {
+    @include icone-before;
+    content: "\f24e";
+}
 
-.contact-form {
+@for $i from 1 through 5 {
+    .contact-bloc__item--#{$i}  {
+      background: lighten($grey3, $i * 5%);
+     
+    }
+}
+@for $i from 1 through 5 {
+    .contact-bloc__item--#{$i}:before {
+      color: lighten($grey3, $i * 5%);
+    }
+}
+
+
+.contact-form fieldset {
+    color: $black;
+    //background: $white-casse;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    & label {
-        
+    padding: 2rem 1rem;
+    box-shadow: $ombre1;
+    & legend {
+        margin-left: 2rem;
+        padding: 0 1rem;
+        font-style: italic;
+        border: 1px solid $grey2;
+        background: $white;
+        border-radius: 1rem;
     }
     & input {
         margin: 0.5rem 0 1rem 0;
@@ -87,9 +122,18 @@
         width: 50%;
         margin: 1rem auto 0 auto;
         padding: 0.5rem 0;
-        background: $tercary-color;
+        background: $white;
         cursor: pointer;
         text-transform: uppercase;
-        color: $white;
+        color: $primary-color;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: 1px solid $primary-color;
+        transition: 0.3s;
+        &:hover {
+            transition: 0.3s;
+            color: $white;
+            background: $primary-color;
+        }
     }
 }

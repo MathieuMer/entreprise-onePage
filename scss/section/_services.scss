@@ -1,6 +1,6 @@
 #services{
     min-height: 100vh;
-    padding: 1rem 0;
+    padding: 2rem 0;
     margin: 0;
     background: rgba(#ffffff, $alpha: 0.5);    
     background-size: cover;
@@ -10,6 +10,7 @@
         @include h2-after;
         content: 'MES SERVICES';
         z-index: -5;
+        color: $light-grey2;
     }
 }
 
@@ -18,13 +19,10 @@
     position: relative;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 1rem 2rem 2rem 2rem;
-    margin: 2rem 10% 0 10%;
-    //border: 1px solid $light-grey2;
+    padding: 1rem 10% 2rem 10%;
+    margin: 2rem 0 0 0;
     background: transparent;
     backdrop-filter: blur(3px);
-    
-    
     &__2 {
         padding-bottom: 2rem;
     }
@@ -53,10 +51,10 @@
 
 
 .carte-service{
-    width: 30%;
+    width: 23%;
     min-height: 20rem;
     position: relative;
-    padding: 1rem 0 3rem 0;
+    padding: 1rem 0 2rem 0;
     background: $white;
     transition: 0.3s;
     transform: translateY(30px);
@@ -65,12 +63,13 @@
     border: 1px solid $light-grey2;
     
     &__icone {
-        height: 8rem;
+        height: 10rem;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        
         & img {
            height: 100%;
         }
@@ -81,16 +80,24 @@
         font-size: 1.5rem;
         padding: 0.5rem 0;
         margin: 1rem 1rem 0 1rem;
+        text-transform: uppercase;
         @include font-title2;
-        border-top: 1px solid $light-grey2;
-        border-bottom: 1px solid $light-grey2;
+        //border-top: 1px solid $light-grey2;
+        //border-bottom: 1px solid $light-grey2;
+    }
+    &__texte {
+        padding: 1rem;
+        color: $grey;
+        text-align: center;
     }
     & ul {
         color: $grey2;
-        margin-left: 1rem;
+        //margin-left: 1rem;
         padding: 2rem 1rem 0 1rem;
+        text-align: center;
         & li {
-            list-style: square;
+            //list-style: square;
+            list-style: none;
         }
         &__titre {
             color: $white;
@@ -115,6 +122,7 @@
     transition: 1s;
     opacity: 1;
 }
+
 #responsive{
     position: relative;
     width: 100%;
@@ -157,6 +165,10 @@
                 height: 0.4rem;
                 background: $orange;
             }
+        }
+        & p {
+            text-align: justify;
+            color: $grey2;
         }
     }
     & .responsive__back{

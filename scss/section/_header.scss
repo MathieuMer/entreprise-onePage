@@ -9,42 +9,36 @@ header {
     
 }
 header.scroll {
-    //background: $white;
-    transition: 1s;
-    //border-bottom: 1px solid $black;
-    //border-radius: 0 0 100% 100%;
-    //box-shadow: 0px 3px 10px $black-transparent;   
+      box-shadow: 0px 5px 8px $black-transparent;
     & .header__top {
-        display: none;
+        opacity: 0;
+        padding: 0 5rem;
+        height: 0;
+        transition: all 1s;
+        & ul {
+            display: none;
+        }
     }
     & nav {
         background: $white;
-        clip-path: polygon(37% 100%, 45% 75%, 100% 75%, 100% 0%, 0% 0%, 0% 100%);
         transition: 1s;
         & img {
             opacity: 1;
             transform: translateY(-50%);
             transition: 1s;
         }
-        & ul {
-            right: 0;
-            margin-left: 0;
-            margin-right: 0;
-            transform: translateX(0%);
-            transition: all 1s;
-        }
         & li {
-            padding: 0.5rem 1rem 0.5rem 1rem;
-            transition: 1s;
+            color: $grey;
         }
         & a.active{
             & li {
-                color: $white;
-                background-color: $primary-color;
+                color: $primary-color;
+                border-bottom: 6px solid $primary-color;
+                //background-color: $primary-color;
             }
         }
         & a.active:hover li {
-            color: $white;
+            color: $primary-color;
         }
         & a:hover li {
             color: $primary-color;
@@ -54,15 +48,13 @@ header.scroll {
     
 }
 .header__top{
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5rem;
-    transition: 1s;
-    //background-color: darken($tercary-color, 5%);
+    padding: 0.4rem 5rem;
+    transition: all 1s;
     background: $primary-color;
-    
     & .header__top__coordonnee {
         display: flex;
         margin: 0;
@@ -70,14 +62,19 @@ header.scroll {
         transition: 1s;
         color: $light-grey2;
         & li:nth-child(n+2){
-            padding-left: 1rem;
-            margin-left: 1rem;
+            padding-left: 2rem;
+            margin-left: 2rem;
         }
         & li:nth-child(1n+2){
             border-left: 1px solid $light-grey;
         }
         & li a {
             color: $white;
+            transition: 0.3s;
+        }
+        & li:hover a {
+            color: $secondary-color;
+            transition: 0.3s;
         }
     }
     & .header__top__icones {
@@ -87,11 +84,16 @@ header.scroll {
         transition: 1s;
         & li a{
             color: $white;
-            padding: 0 0.5rem
+            padding: 0 0.5rem;
+            transition: 0.3s;
+        }
+        & li:hover a {
+            color: $secondary-color;
+            transition: 0.3s;
         }
         & li:first-child{
-            border: 1px solid $white;
-            margin-right: 2rem;
+            //border: 1px solid $white;
+            //margin-right: 2rem;
             & a {
                 padding: 0 0.1rem;
             }
@@ -106,9 +108,7 @@ nav {
     @include font-title2;
     transition: all 1s;
     position: relative;
-    height: 3.5rem;
     background: rgba($white, 0.3);
-    clip-path: polygon(37% 100%, 66% 100%, 100% 100%, 100% 0%, 0% 0%, 0% 100%);
     & img {
         position: absolute;
         left: 2rem;
@@ -119,13 +119,9 @@ nav {
         transition: 1s;
     }
     & ul {
-        @include liste-inline;
-        position: absolute;
-        top: 0;
-        right: 50%;
-        transform: translateX(50%);
+        
+        display: flex;
         justify-content: center;
-        align-items: center;
         transition: 1s;
         & a:hover li {
                 color: $primary-color;
@@ -141,10 +137,11 @@ nav {
         & li {
             margin: 0;
             white-space: nowrap;
-            color: $light-grey;
+            color: $light-grey2;
             padding: 1rem 2rem 1rem 2rem;
             text-transform: uppercase;
             transition: 1s;
+            border-bottom: 6px solid transparent;
         }
     }
 }
@@ -152,17 +149,25 @@ nav {
 #home{
     height: 100vh;
     width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba($white, 0.1), rgba($white-casse, 0.6)),
-                  url("../images/fond5.jpg");
-    background-attachment: fixed;
-    background-position: 50% 50%;
-    background-size: 200%;
-    background-repeat: no-repeat;
     margin: 0;
     padding: 6rem 0 4rem 0;
+
+    & #home-background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba($black, 0.5), rgba($white, 0.4)),
+                  url("../images/fond5.jpg");
+        background-position: 50% 50%;
+        background-size: 200%;
+        animation: back-rotation 30s linear infinite;
+    }
     & .home__bloc {
         height: 100%;
         width: 80%;
@@ -198,6 +203,7 @@ nav {
         border-bottom: 1px solid $primary-color;
         border-right: 1px solid $primary-color;
         border-left: 1px solid $primary-color;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -216,7 +222,57 @@ nav {
                 color: $grey2;
             }
         }
+        &__icones {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            & li {
+                width: 3rem;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                & a {
+                    font-size: 1.5rem;
+                }
+            }
+            & li:nth-child(2) {
+                margin-top: 1rem;
+            }
+            &__github {
+                border: 1px solid $github-color;
+                background: transparent;
+                transition: 0.3s;
+                & a {
+                    color: $github-color;
+                }
+                &:hover {
+                    background: $github-color;
+                    transition: 0.3s;
+                    & a {
+                        color: $white;
+                    }
+                }
+            }
+            &__linkedin {
+                border: 1px solid $linkedin-color;
+                background: transparent;
+                transition: 0.3s;
+                & a {
+                    color: $linkedin-color;
+                }
+                &:hover {
+                    background: $linkedin-color;
+                    transition: 0.3s;
+                    & a {
+                        color: $white;
+                    }
+                }
+            }
+        }
     }
+    
     & .home__bloc__chevron {
         position: absolute;
         bottom: 2rem;
@@ -240,5 +296,23 @@ nav {
             background: $primary-color;
             color: $white;
         }
+    }
+}
+
+@keyframes back-rotation {
+    0% {
+        background-position: 50% 40%;
+    }
+    25% {
+        background-position: 60% 50%;
+    }
+    50% {
+        background-position: 50% 60%;
+    }
+    75% {
+        background-position: 40% 50%;
+    }
+    100% {
+        background-position: 50% 40%;
     }
 }

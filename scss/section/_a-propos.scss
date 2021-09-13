@@ -1,43 +1,59 @@
 #a-propos{
     min-height: 100vh;
-    background-image: linear-gradient(rgba($white, 0.7), rgba($white-casse, 1)),
+    position: relative;
+    background-image: linear-gradient(45deg, $secondary-color 30%, rgba($black, 0.5) 30%, rgba($black, 0.8) 100%),
     url("../images/fond_homeHD.jpg");
     background-attachment: fixed;
     background-size: cover;
+    background-position: 50% 0%;
     background-repeat: no-repeat;
-    padding: 2rem 10%;
+    padding: 2rem 0;
+    border-top: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
     //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
-    & h2:after{
-        content: 'A PROPOS';
-        z-index: -1;
-        @include h2-after;
+   
+    & .a-propos__titre {
+        & h2 {
+            color: $white;
+            &:after{
+                content: 'A PROPOS';
+                z-index: -1;
+                @include h2-after;
+                color: $grey2;
+            }
+        }
+        & p {
+            color: $white-casse;
+        }
+
+
     }
     .conteneur-a-propos {
-        width: 60%;
-        margin: 0 auto;
-        padding: 2rem;
+        padding: 3rem 10% 2rem 10%;
         position: relative;
-        //background: #ffffff;
-        color: $grey3;
-        border-top: 3px solid $tercary-color;
-        border-bottom: 3px solid $tercary-color;
-
+        color: $grey2;
+        z-index: 2;
+        & .a-propos__item {
+            background: $white;
+            padding: 2rem;
+            width: 60%;
+            box-shadow: $ombre1;
+        }
+        & .a-propos__image {
+            width: 13rem;
+            height: 13rem;
+            border-radius: 50%;
+            float: left;
+            shape-outside: circle();
+            margin-right: 4rem;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+        }
+        
+        & .a-propos__texte {
+            margin: 0;
+            padding: 0 0 0 0;
+            text-align: justify;
+        }
     }
-}
-
-.a-propos__image {
-    width: 13rem;
-    height: 13rem;
-    border-radius: 50%;
-    float: left;
-    shape-outside: circle();
-    margin-right: 4rem;
-    //filter: grayscale(30%);
-}
-
-.a-propos__texte {
-    margin: 0;
-    padding: 0 0 0 0;
-    text-align: justify;
-    
 }

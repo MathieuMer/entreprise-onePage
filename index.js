@@ -33,8 +33,8 @@ $(document).ready(function() {
 $(window).scroll(function() {
     var scrollDistance = $(window).scrollTop();
 
-    // Gestion zoom background #home
-    $("#home").css({
+    // Gestion zoom background #home-background
+    $("#home-background").css({
         backgroundSize: (180 - scrollDistance/12) + "%"
     });
 
@@ -100,11 +100,12 @@ function sendEmail(event) {
 
     let tempParams = {
         user_name: document.getElementById("user_name").value,
+        user_tel: document.getElementById("user_tel").value,
         user_email: document.getElementById("user_email").value,
         message: document.getElementById("user_message").value
     }
     console.log(tempParams);
-    if (tempParams.user_name == "" || tempParams.user_email == "" || tempParams.message == "") {
+    if (tempParams.user_name == "" || tempParams.user_email == "" || tempParams.message == "" || tempParams.user_tel == "") {
         swal({
             text: "Veuillez remplir tout les champs !",
             buttons: false,
