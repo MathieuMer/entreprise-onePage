@@ -41,8 +41,8 @@ $(window).scroll(function() {
     // Assign active class to nav links while scrolling
     $('section').each(function(i) {
             if ($(this).position().top -120 <= scrollDistance) { // -120 pour le décalage dû au header
-                    $('nav ul a.active').removeClass('active');
-                    $('nav ul a').eq(i).addClass('active');
+                    $('nav ul li.active').removeClass('active');
+                    $('nav ul li').eq(i).addClass('active');
             }
     });
 }).scroll();

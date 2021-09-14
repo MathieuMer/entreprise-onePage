@@ -27,20 +27,21 @@ header.scroll {
             transform: translateY(-50%);
             transition: 1s;
         }
-        & li {
+        & li a {
             color: $grey;
         }
-        & a.active{
-            & li {
+        & li.active{
+            border-bottom: 6px solid $primary-color;
+            & a {
                 color: $primary-color;
-                border-bottom: 6px solid $primary-color;
+                
                 //background-color: $primary-color;
             }
         }
-        & a.active:hover li {
+        & li.active:hover a {
             color: $primary-color;
         }
-        & a:hover li {
+        & li:hover a {
             color: $primary-color;
             transition: 0.3s;
         }
@@ -123,13 +124,13 @@ nav {
         display: flex;
         justify-content: center;
         transition: 1s;
-        & a:hover li {
+        & li:hover a {
                 color: $primary-color;
                 transition: 0.3s;
             }
-        & a.active{
+        & li.active{
             position: relative;
-            & li {
+            & a {
                 color: $primary-color;
                 //text-shadow: 0px -3px 10px $black;
             }
@@ -137,11 +138,18 @@ nav {
         & li {
             margin: 0;
             white-space: nowrap;
-            color: $light-grey2;
-            padding: 1rem 2rem 1rem 2rem;
+            
             text-transform: uppercase;
             transition: 1s;
             border-bottom: 6px solid transparent;
+            & a {
+                display: block;
+                padding: 1rem 2rem 1rem 2rem;
+                color: $light-grey2;
+                transition: 0.3s;
+                height: 100%;
+                width: 100%;
+            }
         }
     }
 }

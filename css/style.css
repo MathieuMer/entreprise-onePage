@@ -130,20 +130,23 @@ header.scroll nav img {
   transition: 1s;
 }
 
-header.scroll nav li {
+header.scroll nav li a {
   color: #868686;
 }
 
-header.scroll nav a.active li {
-  color: #1A2D2E;
+header.scroll nav li.active {
   border-bottom: 6px solid #1A2D2E;
 }
 
-header.scroll nav a.active:hover li {
+header.scroll nav li.active a {
   color: #1A2D2E;
 }
 
-header.scroll nav a:hover li {
+header.scroll nav li.active:hover a {
+  color: #1A2D2E;
+}
+
+header.scroll nav li:hover a {
   color: #1A2D2E;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -260,29 +263,37 @@ nav ul {
   transition: 1s;
 }
 
-nav ul a:hover li {
+nav ul li:hover a {
   color: #1A2D2E;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-nav ul a.active {
+nav ul li.active {
   position: relative;
 }
 
-nav ul a.active li {
+nav ul li.active a {
   color: #1A2D2E;
 }
 
 nav ul li {
   margin: 0;
   white-space: nowrap;
-  color: #d8d8d8;
-  padding: 1rem 2rem 1rem 2rem;
   text-transform: uppercase;
   -webkit-transition: 1s;
   transition: 1s;
   border-bottom: 6px solid transparent;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem 2rem 1rem 2rem;
+  color: #d8d8d8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  height: 100%;
+  width: 100%;
 }
 
 #home {
@@ -622,6 +633,8 @@ nav ul li {
   z-index: 1;
   margin-top: 2rem;
   border: 1px solid #d8d8d8;
+  -webkit-box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
 .carte-service__icone {
@@ -677,13 +690,6 @@ nav ul li {
 .carte-service ul__description {
   color: #d8d8d8;
   padding: 0 1rem;
-}
-
-.carte-service:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .appear {
@@ -1094,7 +1100,7 @@ nav ul li {
 #a-propos {
   min-height: 100vh;
   position: relative;
-  background-image: linear-gradient(45deg, #F88B6A 30%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.8) 100%), url("../images/fond_homeHD.jpg");
+  background-image: linear-gradient(45deg, #F88B6A 35%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.9) 100%), url("../images/fond1.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 0%;
@@ -1127,36 +1133,164 @@ nav ul li {
 }
 
 #a-propos .conteneur-a-propos {
-  padding: 3rem 10% 2rem 10%;
+  padding: 5rem 10% 2rem 10%;
   position: relative;
-  color: #5f5f5f;
+  color: #494949;
   z-index: 2;
 }
 
-#a-propos .conteneur-a-propos .a-propos__item {
-  background: #FFFFFF;
-  padding: 2rem;
+#a-propos .conteneur-a-propos .a-propos__item__1 {
+  position: relative;
+  background: #F3F3F3;
+  padding: 2rem 4rem 2rem 2rem;
   width: 60%;
+  margin: 0 0 0 20%;
   -webkit-box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
           box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
 }
 
-#a-propos .conteneur-a-propos .a-propos__image {
-  width: 13rem;
-  height: 13rem;
-  border-radius: 50%;
-  float: left;
-  shape-outside: circle();
-  margin-right: 4rem;
-  margin-bottom: 1rem;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+#a-propos .conteneur-a-propos .a-propos__item__1:after {
+  position: absolute;
+  content: '';
+  top: 5%;
+  height: 100%;
+  right: -5%;
+  width: 100%;
+  border: 3px solid #F88B6A;
+  z-index: -2;
 }
 
-#a-propos .conteneur-a-propos .a-propos__texte {
+#a-propos .conteneur-a-propos .a-propos__item__1 .a-propos__image {
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  -webkit-filter: contrast(110%);
+          filter: contrast(110%);
+}
+
+#a-propos .conteneur-a-propos .a-propos__item__1 .a-propos__texte {
   margin: 0;
   padding: 0 0 0 0;
   text-align: justify;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone {
+  position: absolute;
+  right: 20%;
+  top: -3rem;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1A2D2E), to(#000000));
+  background: linear-gradient(180deg, #1A2D2E, #000000);
+  z-index: -1;
+  -webkit-box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul {
+  width: 20%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 10% 0;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone a {
+  font-size: 1.5rem;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--github {
+  border: 1px solid #d8d8d8;
+  background: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--github a {
+  color: #d8d8d8;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--github:hover {
+  background: #F3F3F3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--github:hover a {
+  color: #24292F;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--linkedin {
+  border: 1px solid #0A66C2;
+  background: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--linkedin a {
+  color: #0A66C2;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--linkedin:hover {
+  background: #0A66C2;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--linkedin:hover a {
+  color: #FFFFFF;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--cv {
+  border: 1px solid #F88B6A;
+  background: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--cv a {
+  color: #F88B6A;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--cv:hover {
+  background: #F88B6A;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#a-propos .conteneur-a-propos .a-propos__conteneur-icone ul .a-propos__icone--cv:hover a {
+  color: #FFFFFF;
 }
 
 #contact {
@@ -1241,8 +1375,8 @@ nav ul li {
 
 .contact-bloc__item--1:before {
   position: absolute;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   vertical-align: middle;
   left: 50%;
@@ -1252,10 +1386,16 @@ nav ul li {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
-  display: inline-block;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #1A2D2E;
-  padding: 1rem;
   border-radius: 50%;
   border: 1px solid #d8d8d8;
   background: #FFFFFF;
@@ -1264,8 +1404,8 @@ nav ul li {
 
 .contact-bloc__item--2:before {
   position: absolute;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   vertical-align: middle;
   left: 50%;
@@ -1275,10 +1415,16 @@ nav ul li {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
-  display: inline-block;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #1A2D2E;
-  padding: 1rem;
   border-radius: 50%;
   border: 1px solid #d8d8d8;
   background: #FFFFFF;
@@ -1287,8 +1433,8 @@ nav ul li {
 
 .contact-bloc__item--3:before {
   position: absolute;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   vertical-align: middle;
   left: 50%;
@@ -1298,10 +1444,16 @@ nav ul li {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
-  display: inline-block;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #1A2D2E;
-  padding: 1rem;
   border-radius: 50%;
   border: 1px solid #d8d8d8;
   background: #FFFFFF;
@@ -1310,8 +1462,8 @@ nav ul li {
 
 .contact-bloc__item--4:before {
   position: absolute;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   vertical-align: middle;
   left: 50%;
@@ -1321,10 +1473,16 @@ nav ul li {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
-  display: inline-block;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #1A2D2E;
-  padding: 1rem;
   border-radius: 50%;
   border: 1px solid #d8d8d8;
   background: #FFFFFF;
@@ -1333,8 +1491,8 @@ nav ul li {
 
 .contact-bloc__item--5:before {
   position: absolute;
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   vertical-align: middle;
   left: 50%;
@@ -1344,10 +1502,16 @@ nav ul li {
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
-  display: inline-block;
-  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #1A2D2E;
-  padding: 1rem;
   border-radius: 50%;
   border: 1px solid #d8d8d8;
   background: #FFFFFF;
@@ -1453,5 +1617,38 @@ nav ul li {
   transition: 0.3s;
   color: #FFFFFF;
   background: #1A2D2E;
+}
+
+footer {
+  background: #000000;
+  color: #a7a7a7;
+}
+
+footer .footer__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer__middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer .footer__middle__item {
+  width: 25%;
 }
 /*# sourceMappingURL=style.css.map */
