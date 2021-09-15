@@ -11,7 +11,9 @@
     border-top: 2px solid $secondary-color;
     border-bottom: 2px solid $secondary-color;
     //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
-   
+    @include responsive(tab-port){
+        min-height: 50vh;
+    }
     & .a-propos__titre {
         & h2 {
             color: $white;
@@ -40,6 +42,9 @@
             width: 60%;
             margin: 0 0 0 20%;
             box-shadow: $ombre1;
+            @include responsive(tab-port){
+                width: 70%;
+            }
             &:after{
                 position: absolute;
                 content: '';
@@ -49,7 +54,6 @@
                 width: 100%;
                 border: 3px solid $secondary-color;
                 z-index: -2;
-                //transform: rotate(2deg);
             }
             & .a-propos__image {
                 position: absolute;
@@ -58,11 +62,6 @@
                 width: 10rem;
                 height: 10rem;
                 border-radius: 50%;
-                //transform: translateY(-30%);
-                //border: 3px solid $secondary-color;
-                //float: left;
-                //shape-outside: circle();
-                //margin-right: 4rem;
                 margin: 0 auto 1rem auto;
                 filter: contrast(110%);
             }
@@ -78,7 +77,6 @@
             top: -3rem;
             width: 100%;
             height: 100%;
-            //background: $primary-color;
             background: linear-gradient(180deg, $primary-color, $black);
             z-index: -1;
             box-shadow: $ombre1;

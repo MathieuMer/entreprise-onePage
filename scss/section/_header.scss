@@ -20,29 +20,33 @@ header.scroll {
         }
     }
     & nav {
-        background: $white;
+        //background: $white;
+        background: $black;
         transition: 1s;
         & img {
             opacity: 1;
             transform: translateY(-50%);
             transition: 1s;
+            @include responsive(tab-port){
+                display: none;
+            }
         }
         & li a {
-            color: $grey;
+            color: $light-grey;
         }
         & li.active{
-            border-bottom: 6px solid $primary-color;
+            border-bottom: 6px solid $secondary-color;
             & a {
-                color: $primary-color;
+                color: $white;
                 
                 //background-color: $primary-color;
             }
         }
         & li.active:hover a {
-            color: $primary-color;
+            color: $white;
         }
         & li:hover a {
-            color: $primary-color;
+            color: $white;
             transition: 0.3s;
         }
     }
@@ -203,6 +207,9 @@ nav {
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 width: 60%;
+                @include responsive(tab-port){
+                    width: 90%;
+                }
             }
         }
     }
@@ -235,15 +242,7 @@ nav {
             top: 1rem;
             right: 1rem;
             & li {
-                width: 3rem;
-                height: 3rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                & a {
-                    font-size: 1.5rem;
-                }
+               @include li-icone-social;
             }
             & li:nth-child(2) {
                 margin-top: 1rem;

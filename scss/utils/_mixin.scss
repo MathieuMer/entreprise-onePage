@@ -29,6 +29,30 @@
     background: $white;
 }
 
+// icones ::before footer
+@mixin icone-footer {
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    color: $light-grey;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+// icones socials li
+@mixin li-icone-social {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    & a {
+        font-size: 1.5rem;
+    }
+}
+
 
 // Bordures
 @mixin bordure {
@@ -46,10 +70,13 @@
 @mixin h2-after {
     position: absolute;
         font-size: 6rem;
-        height: 6rem;
-        top: -1.5rem;
+        height: 5rem;
+        top: -1rem;
         width: 100%;
         left: 0;
         text-align: left;
         padding-left: 50%;
+        @include responsive(tab-port){
+            font-size: 5rem;
+        }
 }

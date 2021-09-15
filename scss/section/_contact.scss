@@ -29,9 +29,20 @@
             //border: 1px solid $white;
             position: relative;
             box-shadow: $ombre1;
+            @include responsive(tab-port){
+                width: 45%;
+            }
         }
         &__item:nth-child(n+2){
             margin-top: 2.5rem;
+            @include responsive(tab-port){
+                margin-top: 0;
+            }
+        }
+        @include responsive(tab-port){
+            &__item:nth-child(n+3){
+                margin-top: 2rem;
+            }
         }
         & a{
             text-decoration: none;
@@ -50,10 +61,21 @@
             width: 24%;
             //border-right: 1px solid $light-grey2;
             //padding-right: 2rem;
+            @include responsive(tab-port){
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
             
         }
         &--form {
             width: 70%;
+            @include responsive(tab-port){
+                width: 100%;
+                margin-top: 2rem;
+            }
         }
     }
 }
@@ -82,13 +104,13 @@
 
 @for $i from 1 through 5 {
     .contact-bloc__item--#{$i}  {
-      background: lighten($grey3, $i * 5%);
+      background: lighten($primary-color, $i * 5%);
      
     }
 }
 @for $i from 1 through 5 {
     .contact-bloc__item--#{$i}:before {
-      color: lighten($grey3, $i * 5%);
+      color: lighten($primary-color, $i * 5%);
     }
 }
 

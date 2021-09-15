@@ -1,21 +1,132 @@
 footer {
-    background: $black;
     color: $light-grey;
     & .footer__top {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        &__item{
-            
+        background: darken($primary-color, 5%);
+        padding: 0.5rem 10%;
+        &__icones{
+            display: flex;
+            & li {
+                    @include li-icone-social;
+                    margin-left: 1rem;
+            }
+            &--github {
+                border: 1px solid $white;
+                background: transparent;
+                transition: 0.3s;
+                & a {
+                    color: $white;
+                }
+                &:hover {
+                    background: $white;
+                    transition: 0.3s;
+                    & a {
+                        color: $github-color;
+                    }
+                }
+            }
+            &--linkedin {
+                    border: 1px solid $linkedin-color;
+                    background: transparent;
+                    transition: 0.3s;
+                & a {
+                    color: $linkedin-color;
+                }
+                &:hover {
+                    background: $linkedin-color;
+                    transition: 0.3s;
+                    & a {
+                        color: $white;
+                    }
+                }
+            }
         }
     }
     & .footer__middle {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: flex-start;
-        &__item{
+        background: $black;
+        padding: 1rem 0;
+        &__item {
             width: 25%;
-
+            &__logo img {
+                display: block;
+                width: 70%;
+                margin: 0 auto;
+            }
+            
+            &--col1 {
+                & .col1-texte {
+                    padding-top: 1rem;
+                }
+                
+            }
+            &--col2 {
+                padding-left: 5%;
+                & .col2-item {
+                    padding-top: 0.2rem;
+                    
+                    & a {
+                        color: $light-grey;
+                        transition: 0.3s;
+                        &:hover{
+                            color: $white;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+                & .col2-item--mentions{
+                    display: inline-block;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    &:hover{
+                        color: $white;
+                        transition: 0.3s;
+                    }
+                }
+                
+            }
+            &--col3 {
+                & .col3-item {
+                    padding-top: 0.5rem;
+                    color: $light-grey;
+                    position: relative;
+                    & a {
+                        color: $light-grey;
+                        transition: 0.3s;
+                        &:hover{
+                            color: $white;
+                            transition: 0.3s;
+                        }
+                    }
+                    &--adresse:before{
+                        @include icone-footer;
+                        content: "\f041";
+                    }
+                    &--tel:before{
+                        @include icone-footer;
+                        content: "\f879";
+                    }
+                    &--email:before{
+                        @include icone-footer;
+                        content: "\f0e0";
+                    }
+                }
+            }
+            & .footer-titre {
+                font-size: 1.2rem;
+                color: $white;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+            }
         }
+    }
+    & .footer__bottom {
+        text-align: center;
+        background: darken($primary-color, 5%);
+        padding: 0.5rem 0;
     }
 }

@@ -14,11 +14,17 @@
     margin: 0 8% 0 8%;
     justify-content: space-around;
     align-items: flex-start;
+    @include responsive(tab-port){
+        margin:0;
+    }
 }
 .carte-tarif{
     width: 26%;
     text-align: center;
     box-shadow: $ombre1;
+    @include responsive(tab-port){
+        width: 31%;
+    }
     &--1 {
         background: $primary-color;
         //border: 1px solid $primary-color;
@@ -53,6 +59,9 @@
         letter-spacing: 1px;
         padding: 1rem 2rem;
         color: $white;
+        @include responsive(tab-port){
+            font-size: 1.5rem;
+        }
         &:after{
             content: '';
             position: absolute;
@@ -137,6 +146,9 @@
     text-transform: uppercase;
     box-shadow: $ombre1;
     transition: 0.3s;
+    @include responsive(tab-port){
+        font-size: 1.2rem;
+    }
     &:hover {
         background: darken($tercary-color, 3%);
         box-shadow: $ombre2;

@@ -97,15 +97,16 @@ animations.forEach(elt => {
 
 function sendEmail(event) {
     event.preventDefault();
-
+    // recuperatuion des données
     let tempParams = {
         user_name: document.getElementById("user_name").value,
         user_tel: document.getElementById("user_tel").value,
         user_email: document.getElementById("user_email").value,
         message: document.getElementById("user_message").value
     }
-    console.log(tempParams);
+    // verification champs vide
     if (tempParams.user_name == "" || tempParams.user_email == "" || tempParams.message == "" || tempParams.user_tel == "") {
+        // si un champs est vide : envoie une alerte avec sweet alert
         swal({
             text: "Veuillez remplir tout les champs !",
             buttons: false,
@@ -114,6 +115,7 @@ function sendEmail(event) {
           });
           return;
     }
+    // Envoi du mail avec emailjs
     emailjs.send('service_hci0lwc', 'template_zzcminq', tempParams)
     .then((result) => {
           console.log('SUCCESS!', result.status, result.text);
@@ -134,6 +136,34 @@ function sendEmail(event) {
           });
     })
 }
+
+// Afficher l'année en cours en bas de page
+const annee = (new Date()).getFullYear();
+divDate = document.querySelector('.footer__bottom');
+divDate.textContent = 'MATHIEU MERCIER - ' + annee;
+
+// Gestion affichage modal mentions légales
+const modal = document.getElementById("modal");
+const btnMention = document.getElementById("bouton-mention");
+const btnCloseModal = document.getElementById("modal-close");
+
+// When the user clicks the button, open the modal 
+btnMention.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on (x), close the modal
+btnCloseModal.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 /*
 
 */
