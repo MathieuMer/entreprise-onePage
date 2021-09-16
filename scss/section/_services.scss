@@ -11,6 +11,9 @@
         content: 'MES SERVICES';
         z-index: -5;
         color: $light-grey2;
+        @include responsive(phone){
+            content: 'SERVICES';
+        }
     }
 }
 
@@ -23,6 +26,9 @@
     margin: 2rem 0 0 0;
     background: transparent;
     backdrop-filter: blur(3px);
+    @include responsive(laptop){
+        padding: 1rem 2% 2rem 2%;
+    }
     &__2 {
         padding-bottom: 2rem;
     }
@@ -65,6 +71,9 @@
     @include responsive(tab-port){
         width: 45%;
     }
+    @include responsive(phone){
+        width: 80%;
+    }
     &__icone {
         height: 10rem;
         margin: 0 auto;
@@ -74,6 +83,9 @@
         overflow: hidden;
         & img {
            height: 100%;
+           @include responsive(laptop){
+            height: 90%;
+            }
         }
     }
     & h4 {
@@ -142,8 +154,14 @@
        z-index: 1;
         & img {
             width: 90%;
+            @include responsive(laptop){
+                width: 100%;
+            }
             @include responsive(tab-port){
                 width: 60%;
+            }
+            @include responsive(phone){
+                width: 100%;
             }
         }
         @include responsive(tab-port){
@@ -165,6 +183,9 @@
             font-size: 3rem;
             position: relative;
             margin-bottom: 3rem;
+            @include responsive(phone){
+                font-size: 2rem;
+            }
             &:after{
                 content: '';
                 position: absolute;
@@ -189,6 +210,12 @@
        background: $light-grey2;
        clip-path: polygon(0 0, 50% 0, 65% 100%, 0% 100%);
        z-index: 0;
+       @include responsive(phone){
+        display: none;
+        }
+       @include responsive(laptop){
+        height: 28%;
+        }
        @include responsive(tab-port){
         height: 5rem;
         bottom: 50%;

@@ -12,7 +12,7 @@
 $phone-maxi: 600px;
 $tab-port-maxi: 800px;
 $tab-land-maxi: 1023px;
-//desktop (desktopfirst)
+$laptop-maxi: 1440px;
 $desktophd-mini: 1800px;
 $desktop4k-mini: 3000px;
 
@@ -35,6 +35,9 @@ desktop4k
 	}
 	@if $device == tab-port{
 		@media (orientation: portrait) {@content;}
+	}
+	@if $device == laptop{
+		@media screen and(max-width: $laptop-maxi) {@content;}
 	}
 	@if $device == 4k{
 		@media screen and(min-width: $desktop4k-mini) {@content;}

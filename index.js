@@ -35,7 +35,7 @@ $(window).scroll(function() {
 
     // Gestion zoom background #home-background
     $("#home-background").css({
-        backgroundSize: (180 - scrollDistance/12) + "%"
+        backgroundSize: (270 - scrollDistance/12) + "%"
     });
 
     // Assign active class to nav links while scrolling

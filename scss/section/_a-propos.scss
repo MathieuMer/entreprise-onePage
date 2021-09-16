@@ -42,8 +42,13 @@
             width: 60%;
             margin: 0 0 0 20%;
             box-shadow: $ombre1;
-            @include responsive(tab-port){
+            @include responsive(laptop){
                 width: 70%;
+            }
+            @include responsive(phone){
+                width: 90%;
+                margin: 2rem 0 0 10%;
+                padding: 5rem 1rem 2rem 1rem;
             }
             &:after{
                 position: absolute;
@@ -64,6 +69,10 @@
                 border-radius: 50%;
                 margin: 0 auto 1rem auto;
                 filter: contrast(110%);
+                @include responsive(phone){
+                    right: 50%;
+                    transform: translateX(50%);
+                }
             }
             & .a-propos__texte {
                 margin: 0;
@@ -81,6 +90,9 @@
             z-index: -1;
             box-shadow: $ombre1;
             transform: rotate(-3deg);
+            @include responsive(phone){
+                transform: rotate(0);
+            }
             & ul {
                 width: 20%;
                 height: 100%;
@@ -89,6 +101,9 @@
                 align-items: center;
                 justify-content: space-around;
                 padding: 10% 0;
+                @include responsive(phone){
+                    justify-content: center;
+                }
                 & .a-propos__icone {
                     width: 3rem;
                     height: 3rem;
@@ -96,6 +111,9 @@
                     align-items: center;
                     justify-content: center;
                     border-radius: 50%;
+                    @include responsive(phone){
+                        margin-top: 2rem;
+                    }
                     & a {
                         font-size: 1.5rem;
                     }

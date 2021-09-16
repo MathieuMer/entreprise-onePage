@@ -8,6 +8,9 @@
         z-index: -1;
         color: $light-grey2;
     }
+    @include responsive(phone){
+        padding: 2rem 3%;
+    }
 }
 .conteneur-carte-tarif {
     display: flex;
@@ -17,13 +20,21 @@
     @include responsive(tab-port){
         margin:0;
     }
+    @include responsive(phone){
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 .carte-tarif{
     width: 26%;
     text-align: center;
     box-shadow: $ombre1;
-    @include responsive(tab-port){
+    @include responsive(laptop){
         width: 31%;
+    }
+    @include responsive(phone){
+        width: 90%;
+        margin-top: 1rem;
     }
     &--1 {
         background: $primary-color;
@@ -59,6 +70,10 @@
         letter-spacing: 1px;
         padding: 1rem 2rem;
         color: $white;
+        @include responsive(laptop){
+            padding: 1rem 1rem;
+            font-size: 1.6rem;
+        }
         @include responsive(tab-port){
             font-size: 1.5rem;
         }
@@ -148,6 +163,10 @@
     transition: 0.3s;
     @include responsive(tab-port){
         font-size: 1.2rem;
+    }
+    @include responsive(phone){
+        width: 100%;
+        padding: 0.5rem 1rem;
     }
     &:hover {
         background: darken($tercary-color, 3%);

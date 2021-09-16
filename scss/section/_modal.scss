@@ -9,6 +9,9 @@
     padding: 5rem 0;
     overflow: auto;
     background-color: $black-transparent;
+    @include responsive(phone){
+        padding: 2rem 0;
+    }
 }
 .modal-content {
     background-color: $white-casse;
@@ -17,6 +20,10 @@
     border: 1px solid $black;
     width: 50%;
     color: $grey3;
+    @include responsive(tab-port){
+        width: 90%;
+    }
+    
     
     &--titre {
         padding-bottom: 3rem;

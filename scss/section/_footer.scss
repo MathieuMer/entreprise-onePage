@@ -50,22 +50,44 @@ footer {
         align-items: flex-start;
         background: $black;
         padding: 1rem 0;
+        @include responsive(tab-port){
+           justify-content: center;
+           flex-wrap: wrap;
+        }
         &__item {
-            width: 25%;
+            @include responsive(tab-port){
+                padding-top: 2rem;
+            }
             &__logo img {
                 display: block;
                 width: 70%;
                 margin: 0 auto;
+                @include responsive(tab-port){
+                    width: 30%;
+                }
             }
             
             &--col1 {
+                width: 25%;
+                @include responsive(laptop){
+                    width: 40%;
+                }
+                @include responsive(tab-port){
+                    width: 80%;
+                }
                 & .col1-texte {
                     padding-top: 1rem;
+                   
                 }
                 
             }
             &--col2 {
                 padding-left: 5%;
+                width: 25%;
+                @include responsive(tab-port){
+                    padding-left: 0;
+                    width: 45%;
+                }
                 & .col2-item {
                     padding-top: 0.2rem;
                     
@@ -90,6 +112,10 @@ footer {
                 
             }
             &--col3 {
+                width: 25%;
+                @include responsive(tab-port){
+                    width: 45%;
+                }
                 & .col3-item {
                     padding-top: 0.5rem;
                     color: $light-grey;
