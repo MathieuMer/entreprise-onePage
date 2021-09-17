@@ -112,8 +112,30 @@ function sendEmail(event) {
             buttons: false,
             timer: 2000,
             icon: "error"
-          });
-          return;
+        });
+        return;
+    }
+    // test validation email
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(tempParams.user_email)) {
+        swal({
+            text: "Format de l'email incorrect !",
+            buttons: false,
+            timer: 2000,
+            icon: "error"
+        });
+        return;
+    }
+    // test validation tel
+    const telRegex = /^((\+|00)33\s?|0)[67](\s?\d{2}){4}$/
+    if (!telRegex.test(tempParams.user_tel)) {
+        swal({
+            text: "Format du numéro de téléphone incorrect !",
+            buttons: false,
+            timer: 2000,
+            icon: "error"
+        });
+        return;
     }
     // Envoi du mail avec emailjs
     emailjs.send('service_hci0lwc', 'template_zzcminq', tempParams)

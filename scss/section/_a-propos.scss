@@ -42,6 +42,10 @@
             width: 60%;
             margin: 0 0 0 20%;
             box-shadow: $ombre1;
+            & a {
+                color: $grey3;
+                
+            }
             @include responsive(laptop){
                 width: 70%;
             }

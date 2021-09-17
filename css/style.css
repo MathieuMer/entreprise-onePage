@@ -823,7 +823,7 @@ nav ul li a {
 
 .carte-service h4 {
   text-align: center;
-  color: #494949;
+  color: #3B3B3B;
   font-size: 1.5rem;
   padding: 0.5rem 0;
   margin: 1rem 1rem 0 1rem;
@@ -833,7 +833,7 @@ nav ul li a {
 
 .carte-service__texte {
   padding: 1rem;
-  color: #868686;
+  color: #5f5f5f;
   text-align: center;
 }
 
@@ -956,7 +956,7 @@ nav ul li a {
 
 #responsive .responsive__right {
   width: 50%;
-  color: #494949;
+  color: #3B3B3B;
   padding: 2rem;
   z-index: 1;
 }
@@ -1278,6 +1278,18 @@ nav ul li a {
   background: #1A2D2E;
 }
 
+.carte-tarif--1 h3 {
+  color: #FFFFFF;
+}
+
+.carte-tarif--1 .carte-tarif__prix {
+  color: #FFFFFF;
+}
+
+.carte-tarif--1 .carte-tarif__apd {
+  color: #d8d8d8;
+}
+
 .carte-tarif--1 .carte-tarif__liste li:nth-child(2n) {
   background: #233d3e;
   color: #d8d8d8;
@@ -1287,22 +1299,46 @@ nav ul li a {
   background: #006446;
 }
 
+.carte-tarif--2 h3 {
+  color: #FFFFFF;
+}
+
+.carte-tarif--2 .carte-tarif__prix {
+  color: #FFFFFF;
+}
+
+.carte-tarif--2 .carte-tarif__apd {
+  color: #d8d8d8;
+}
+
 .carte-tarif--2 .carte-tarif__liste li:nth-child(2n) {
   background: #007e58;
-  color: #d8d8d8;
+  color: #F3F3F3;
 }
 
 .carte-tarif--3 {
   background: #F88B6A;
 }
 
+.carte-tarif--3 h3 {
+  color: #000000;
+}
+
+.carte-tarif--3 .carte-tarif__prix {
+  color: #000000;
+}
+
+.carte-tarif--3 .carte-tarif__apd {
+  color: #3B3B3B;
+}
+
 .carte-tarif--3 .carte-tarif__liste li {
-  color: #F3F3F3;
+  color: #3B3B3B;
 }
 
 .carte-tarif--3 .carte-tarif__liste li:nth-child(2n+1) {
   background: #f77852;
-  color: #d8d8d8;
+  color: #000000;
 }
 
 .carte-tarif h3 {
@@ -1311,7 +1347,6 @@ nav ul li a {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1rem 2rem;
-  color: #FFFFFF;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1346,7 +1381,6 @@ nav ul li a {
 }
 
 .carte-tarif .carte-tarif__apd {
-  color: #d8d8d8;
   margin: 2rem 0 0 0;
   padding-bottom: 1rem;
   text-transform: uppercase;
@@ -1358,7 +1392,6 @@ nav ul li a {
   font-weight: bolder;
   margin: 0 0 1rem 0;
   padding-bottom: 1rem;
-  color: #FFFFFF;
 }
 
 .carte-tarif .carte-tarif__prix:after {
@@ -1379,17 +1412,18 @@ nav ul li a {
 
 .carte-tarif__liste li {
   padding: 0.5rem 2rem;
-  color: #a7a7a7;
+  color: #d8d8d8;
 }
 
 .carte-tarif__bouton {
   display: block;
   text-transform: uppercase;
   padding: 1rem 2rem;
-  color: #F3F3F3;
+  color: #000000;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-size: 1.1rem;
+  background: #d8d8d8;
 }
 
 .carte-tarif__bouton:hover {
@@ -1411,7 +1445,7 @@ nav ul li a {
 }
 
 .tarifs__texte--petit {
-  color: #a7a7a7;
+  color: #5f5f5f;
   font-size: 0.9rem;
   text-align: center;
   padding: 1rem 0 2rem 0;
@@ -1529,7 +1563,7 @@ nav ul li a {
 #a-propos .conteneur-a-propos {
   padding: 5rem 10% 2rem 10%;
   position: relative;
-  color: #494949;
+  color: #3B3B3B;
   z-index: 2;
 }
 
@@ -1541,6 +1575,10 @@ nav ul li a {
   margin: 0 0 0 20%;
   -webkit-box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
           box-shadow: 0.3rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+#a-propos .conteneur-a-propos .a-propos__item__1 a {
+  color: #3B3B3B;
 }
 
 @media screen and (max-width: 1440px) {
@@ -1793,7 +1831,7 @@ nav ul li a {
 }
 
 #contact .contact-bloc__intro {
-  color: #868686;
+  color: #5f5f5f;
   font-size: 1.2rem;
   padding: 3rem 10% 0 10%;
   text-align: center;
@@ -2160,6 +2198,9 @@ nav ul li a {
 .contact-form fieldset textarea {
   margin-top: 0.5rem;
   resize: vertical;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem;
 }
 
 .contact-form fieldset button {
@@ -2513,7 +2554,7 @@ footer .footer__bottom {
   padding: 2rem;
   border: 1px solid #000000;
   width: 50%;
-  color: #494949;
+  color: #3B3B3B;
 }
 
 @media screen and (max-width: 1023px) {
@@ -2536,7 +2577,7 @@ footer .footer__bottom {
 }
 
 .modal-close {
-  color: #494949;
+  color: #3B3B3B;
   float: right;
   font-size: 2rem;
   font-weight: bold;
