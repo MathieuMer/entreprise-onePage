@@ -77,8 +77,8 @@ header.scroll {
             padding-left: 2rem;
             margin-left: 2rem;
             @include responsive(phone){
-                padding-left: 0.4rem;
-                margin-left: 0.4rem;
+                padding-left: 0.2rem;
+                margin-left: 0.2rem;
             }
         }
         & li:nth-child(1n+2){
@@ -98,6 +98,9 @@ header.scroll {
         @include liste-inline;
         opacity: 1;
         transition: 1s;
+        @include responsive(phone){
+            display: none;
+        }
         & li a{
             color: $white;
             padding: 0 0.5rem;
@@ -173,7 +176,7 @@ nav {
                     padding: 1rem 1rem;
                 }
                 @include responsive(phone){
-                    padding: 1rem 0.5rem;
+                    padding: 1rem 0.2rem;
                 }
             }
         }

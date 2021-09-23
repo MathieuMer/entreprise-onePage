@@ -65,6 +65,9 @@ footer {
                 @include responsive(tab-port){
                     width: 30%;
                 }
+                @include responsive(phone){
+                    width: 60%;
+                }
             }
             
             &--col1 {
@@ -74,6 +77,10 @@ footer {
                 }
                 @include responsive(tab-port){
                     width: 80%;
+                }
+                @include responsive(tab-port){
+                    width: 100%;
+                    padding-left: 1rem;
                 }
                 & .col1-texte {
                     padding-top: 1rem;
@@ -87,6 +94,10 @@ footer {
                 @include responsive(tab-port){
                     padding-left: 0;
                     width: 45%;
+                }
+                @include responsive(phone){
+                    width: 100%;
+                    padding-left: 3rem;
                 }
                 & .col2-item {
                     padding-top: 0.2rem;
@@ -115,6 +126,10 @@ footer {
                 width: 25%;
                 @include responsive(tab-port){
                     width: 45%;
+                }
+                @include responsive(phone){
+                    width: 100%;
+                    padding-left: 3rem;
                 }
                 & .col3-item {
                     padding-top: 0.5rem;

@@ -217,8 +217,8 @@ header.scroll nav li:hover a {
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .header__top .header__top__coordonnee li:nth-child(n+2) {
-    padding-left: 0.4rem;
-    margin-left: 0.4rem;
+    padding-left: 0.2rem;
+    margin-left: 0.2rem;
   }
 }
 
@@ -247,6 +247,12 @@ header.scroll nav li:hover a {
   opacity: 1;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .header__top .header__top__icones {
+    display: none;
+  }
 }
 
 .header__top .header__top__icones li a {
@@ -360,7 +366,7 @@ nav ul li a {
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   nav ul li a {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.2rem;
   }
 }
 
@@ -1177,7 +1183,6 @@ nav ul li a {
 }
 
 #tarifs {
-  min-height: 100vh;
   padding: 2rem 0;
   background: #F3F3F3;
 }
@@ -2375,6 +2380,12 @@ footer .footer__middle__item__logo img {
   }
 }
 
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  footer .footer__middle__item__logo img {
+    width: 60%;
+  }
+}
+
 footer .footer__middle__item--col1 {
   width: 25%;
 }
@@ -2394,6 +2405,20 @@ footer .footer__middle__item--col1 {
 @media (orientation: portrait) {
   footer .footer__middle__item--col1 {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  footer .footer__middle__item--col1 {
+    width: 100%;
+    padding-left: 1rem;
+  }
+}
+
+@media (orientation: portrait) {
+  footer .footer__middle__item--col1 {
+    width: 100%;
+    padding-left: 1rem;
   }
 }
 
@@ -2417,6 +2442,13 @@ footer .footer__middle__item--col2 {
   footer .footer__middle__item--col2 {
     padding-left: 0;
     width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  footer .footer__middle__item--col2 {
+    width: 100%;
+    padding-left: 3rem;
   }
 }
 
@@ -2462,6 +2494,13 @@ footer .footer__middle__item--col3 {
 @media (orientation: portrait) {
   footer .footer__middle__item--col3 {
     width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  footer .footer__middle__item--col3 {
+    width: 100%;
+    padding-left: 3rem;
   }
 }
 
